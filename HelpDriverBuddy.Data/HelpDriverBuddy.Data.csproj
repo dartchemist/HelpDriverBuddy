@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="STSdb4, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STSdb.4.0.0\lib\STSdb4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,7 +46,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\STSdbRepository.cs" />
+    <Compile Include="STSdbContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="STSdb4.DevelopersGuide.pdf" />
+    <None Include="STSdb4.GettingStarted.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelpDriverBuddy.Data.Models\HelpDriverBuddy.Data.Models.csproj">
+      <Project>{e1164f5b-74cf-4f8a-b553-ee47ab6c43ee}</Project>
+      <Name>HelpDriverBuddy.Data.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

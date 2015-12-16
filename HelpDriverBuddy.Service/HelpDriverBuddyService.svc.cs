@@ -2,14 +2,32 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Configuration;
+    
+    using Data;
     using Data.Models;
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
+    using Data.Repositories;    
     public class HelpDriverBuddyService : IHelpDriverBuddyService
     {
+        private IRepository<Guid, FullProblemInformation> repository;
+
+        public HelpDriverBuddyService()
+        {
+            var filePath = ConfigurationManager.AppSettings["STSdbFile"];
+            var stsdbContext = new STSdbContext(filePath);
+            this.repository = new STSdbRepository<Guid, FullProblemInformation>(stsdbContext);
+        }
+
         public void AddProblem(FullProblemInformation infomation)
         {
-            throw new NotImplementedException();
+            try
+            { 
+            this.repository.Replace(Guid.NewGuid(), infomation);
+            }
+            catch
+            {
+                AddProblem(FullProblemInformation infomation)
+            }
         }
 
         public IEnumerable<KeyValuePair<Guid, BaseProblemInformation>> GetAllProblems()
