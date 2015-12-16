@@ -43,12 +43,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\HelpDriverBuddy.Data.Models\HelpDriverBuddy.Data.Models.csproj">
-      <Project>{b4343ac6-739e-4288-a7c7-d945fa8cf183}</Project>
-      <Name>HelpDriverBuddy.Data.Models</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
