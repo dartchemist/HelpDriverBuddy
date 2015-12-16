@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="HelpDriverBuddy.UniversalWindowsClient.Views.RegisteredVehicleProblems"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:HelpDriverBuddy.UniversalWindowsClient.ViewModels"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <viewModels:RegisteredVehicleProblemsViewModel />
+    </Page.DataContext>
+
+    <Page.BottomAppBar>
+        <AppBar>
+            <AppBarButton Label="Problem"
+                          HorizontalAlignment="Center"/>
+        </AppBar>
+    </Page.BottomAppBar>
+
+    <Page.TopAppBar>
+        <AppBar>
+            
+        </AppBar>
+    </Page.TopAppBar>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ListView Grid.Row="0"
+                  ItemsSource="{Binding VehicleProblems}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Row="0"
+                               Grid.RowSpan="2"
+                               Source="/Assets/Images/DefaultCarImage.png" 
+                               Width="100"
+                               Height="100"/>
+                        <TextBlock Grid.Row="0"
+                                   Grid.Column="1"
+                                   Text="{Binding Vehicle.MakeAndModel}"
+                                   VerticalAlignment="Center"
+                                   FontSize="20"/>
+                        <TextBlock Grid.Row="1"
+                                   Grid.Column="1"
+                                   Text="{Binding Vehicle.RegisrationNumber}" 
+                                   FontSize="20"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
