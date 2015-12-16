@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDriverBuddy.Service", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDriverBuddy.Data.Models", "HelpDriverBuddy.Data.Models\HelpDriverBuddy.Data.Models.csproj", "{E1164F5B-74CF-4F8A-B553-EE47AB6C43EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDriverBuddy.Interfaces", "HelpDriverBuddy.Interfaces\HelpDriverBuddy.Interfaces.csproj", "{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDriverBuddy.Interfaces", "HelpDriverBuddy.Interfaces\HelpDriverBuddy.Interfaces.csproj", "{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,22 +93,22 @@ Global
 		{E1164F5B-74CF-4F8A-B553-EE47AB6C43EE}.Release|x64.Build.0 = Release|Any CPU
 		{E1164F5B-74CF-4F8A-B553-EE47AB6C43EE}.Release|x86.ActiveCfg = Release|Any CPU
 		{E1164F5B-74CF-4F8A-B553-EE47AB6C43EE}.Release|x86.Build.0 = Release|Any CPU
-		{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}.Debug|ARM.ActiveCfg = Debug|ARM
-		{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}.Debug|ARM.Build.0 = Debug|ARM
-		{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}.Debug|x64.ActiveCfg = Debug|x64
-		{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}.Debug|x64.Build.0 = Debug|x64
-		{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}.Debug|x86.ActiveCfg = Debug|x86
-		{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}.Debug|x86.Build.0 = Debug|x86
-		{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}.Release|ARM.ActiveCfg = Release|ARM
-		{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}.Release|ARM.Build.0 = Release|ARM
-		{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}.Release|x64.ActiveCfg = Release|x64
-		{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}.Release|x64.Build.0 = Release|x64
-		{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}.Release|x86.ActiveCfg = Release|x86
-		{6A03FCCA-8463-4F5C-B51E-1625F9B3794F}.Release|x86.Build.0 = Release|x86
+		{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}.Debug|ARM.Build.0 = Debug|Any CPU
+		{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}.Debug|x64.Build.0 = Debug|Any CPU
+		{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}.Debug|x86.Build.0 = Debug|Any CPU
+		{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}.Release|ARM.ActiveCfg = Release|Any CPU
+		{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}.Release|ARM.Build.0 = Release|Any CPU
+		{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}.Release|x64.ActiveCfg = Release|Any CPU
+		{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}.Release|x64.Build.0 = Release|Any CPU
+		{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}.Release|x86.ActiveCfg = Release|Any CPU
+		{67EC3A2A-C778-4885-AEE9-6BBDD722DF54}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
