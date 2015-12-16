@@ -61,14 +61,14 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Service1.svc" />
+    <Content Include="HelpDriverBuddyService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
+    <Compile Include="HelpDriverBuddyService.svc.cs">
+      <DependentUpon>HelpDriverBuddyService.svc</DependentUpon>
     </Compile>
-    <Compile Include="HelpDriverBuddyService.cs" />
+    <Compile Include="IHelpDriverBuddyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +83,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HelpDriverBuddy.Data.Models\HelpDriverBuddy.Data.Models.csproj">
+      <Project>{e1164f5b-74cf-4f8a-b553-ee47ab6c43ee}</Project>
+      <Name>HelpDriverBuddy.Data.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HelpDriverBuddy.Data\HelpDriverBuddy.Data.csproj">
       <Project>{e3635891-90e7-4a93-b222-0e5698547643}</Project>
       <Name>HelpDriverBuddy.Data</Name>
