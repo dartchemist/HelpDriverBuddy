@@ -1,15 +1,17 @@
 ﻿namespace HelpDriverBuddy.Service
 {
-    using System;
     using System.Collections.Generic;
     using System.ServiceModel;
-    using Data.Models;
-   
+    using System.Threading.Tasks;
+    using Interfaces.Services;
+    using Interfaces.Models;
+
     [ServiceContract]
-    public interface IHelpDriverBuddyService
+    public interface IHelpDriverBuddyService : IVehicleProblemService
     {
-        IEnumerable<KeyValuePair<Guid, BaseProblemInformation>> GetAllProblems();
-        FullProblemInformation GetProblem(Guid idOfProblem);
-        void AddProblem(FullProblemInformation infomation);
+        [OperationContract]
+        Task<IEnumerable<IVehicleProblem>> GetVehicleProblems();
+        [OperationContract]
+        void AddProblem(IVehicleProblem infomation);
     }
 }

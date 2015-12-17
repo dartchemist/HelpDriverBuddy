@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HelpDriverBuddy.Service</RootNamespace>
     <AssemblyName>HelpDriverBuddy.Service</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -90,6 +90,10 @@
     <ProjectReference Include="..\HelpDriverBuddy.Data\HelpDriverBuddy.Data.csproj">
       <Project>{e3635891-90e7-4a93-b222-0e5698547643}</Project>
       <Name>HelpDriverBuddy.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HelpDriverBuddy.Interfaces\HelpDriverBuddy.Interfaces.csproj">
+      <Project>{67ec3a2a-c778-4885-aee9-6bbdd722df54}</Project>
+      <Name>HelpDriverBuddy.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

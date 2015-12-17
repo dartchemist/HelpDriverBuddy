@@ -1,43 +1,36 @@
 ﻿namespace HelpDriverBuddy.Service
 {
-    using System;
     using System.Collections.Generic;
     using System.Configuration;
-    
+    using System.Linq;
+    using System.Threading.Tasks;
     using Data;
     using Data.Models;
-    using Data.Repositories;    
+    using Data.Repositories;
+    using Interfaces.Models;
+
     public class HelpDriverBuddyService : IHelpDriverBuddyService
     {
-        private IRepository<Guid, FullProblemInformation> repository;
+        private IRepository<long, VehicleProblem> repository;
 
         public HelpDriverBuddyService()
         {
             var filePath = ConfigurationManager.AppSettings["STSdbFile"];
             var stsdbContext = new STSdbContext(filePath);
-            this.repository = new STSdbRepository<Guid, FullProblemInformation>(stsdbContext);
+            this.repository = new STSdbRepository<long, VehicleProblem>(stsdbContext);
         }
 
-        public void AddProblem(FullProblemInformation infomation)
+        public void AddProblem(IVehicleProblem problem)
         {
-            try
-            { 
-            this.repository.Replace(Guid.NewGuid(), infomation);
-            }
-            catch
-            {
-                AddProblem(FullProblemInformation infomation)
-            }
+            var last = repository.All().Last();
+            var castProblem = VehicleProblem.From(problem);
+
+            this.repository.Replace(last.Key + 1, castProblem);
         }
 
-        public IEnumerable<KeyValuePair<Guid, BaseProblemInformation>> GetAllProblems()
+        public Task<IEnumerable<IVehicleProblem>> GetVehicleProblems()
         {
-            throw new NotImplementedException();
-        }
-
-        public FullProblemInformation GetProblem(Guid idOfProblem)
-        {
-            throw new NotImplementedException();
+            return Task<IEnumerable<IVehicleProblem>>.Run(() => this.repository.All().Select(x => x.Value).Cast<IVehicleProblem>());
         }
     }
 }

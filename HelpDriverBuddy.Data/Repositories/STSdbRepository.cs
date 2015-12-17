@@ -23,11 +23,6 @@
 
         public void Replace(TKey key, TValue value)
         {
-            if(this.Table.Exists(key))
-            {
-                throw new ArgumentException("key present already!");
-            }
-
             this.Table.Replace(key, value);
         }
 
@@ -49,11 +44,6 @@
         public void SaveChanges()
         {
             this.Context.Commit();
-        }
-
-        public void Update(TKey key, TValue newValue)
-        {
-            this.Table.Replace(key, newValue);
         }
     }
 }
