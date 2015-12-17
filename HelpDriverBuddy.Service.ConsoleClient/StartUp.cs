@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HelpDriverBuddy.Service.ConsoleClient
+﻿namespace HelpDriverBuddy.Service.ConsoleClient
 {
-    class Program
+    using System.ServiceModel;
+
+    public class StartUp
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            ServiceReference.HelpDriverBuddyServiceClient client = new ServiceReference.HelpDriverBuddyServiceClient();
+            var c = client.GetVehicleProblems();
         }
     }
 }
