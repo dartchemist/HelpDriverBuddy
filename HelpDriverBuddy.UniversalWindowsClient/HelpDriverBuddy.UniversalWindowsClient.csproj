@@ -102,6 +102,7 @@
     <Compile Include="Infrastructure\ChangeNotificationBase.cs" />
     <Compile Include="Infrastructure\DelegateCommand.cs" />
     <Compile Include="Infrastructure\Unity\ContainerBootstrapper.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\ModelWrapper.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Models\VehicleOwner.cs" />

@@ -7,14 +7,10 @@ using System.Threading.Tasks;
 
 namespace HelpDriverBuddy.DummyServiceClient.ModelsImplementation
 {
-    public class VehicleOwnerModel : IVehicleOwner
+    public class LocationModel : ILocation
     {
-        public ILocation Location { get; set; }
+        public double Latitude { get; set; }
 
-        public string Name { get; set; }
-
-        public string PhoneNumber { get; set; }
-
-
+        public double Longitude { get; set; }
     }
 }

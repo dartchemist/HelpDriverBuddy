@@ -15,6 +15,8 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Models
 
         }
 
+        public Location Location { get; private set; }
+
         public string Name
         {
             get { return GetPropertyValue<string>(nameof(Name)); }
