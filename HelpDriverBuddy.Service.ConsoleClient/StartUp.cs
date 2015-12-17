@@ -1,12 +1,13 @@
 ﻿namespace HelpDriverBuddy.Service.ConsoleClient
 {
+    using ServiceReferenceTest;
     using System.ServiceModel;
 
     public class StartUp
     {
         public static void Main(string[] args)
         {
-            ServiceReference.HelpDriverBuddyServiceClient client = new ServiceReference.HelpDriverBuddyServiceClient();
+            HelpDriverBuddyServiceClient client = new HelpDriverBuddyServiceClient();
             var c = client.GetVehicleProblems();
         }
     }

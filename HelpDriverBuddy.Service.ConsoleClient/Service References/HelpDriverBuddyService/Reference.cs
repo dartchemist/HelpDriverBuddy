@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HelpDriverBuddy.Service.ConsoleClient.ServiceReference {
+namespace HelpDriverBuddy.Service.ConsoleClient.HelpDriverBuddyService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IHelpDriverBuddyService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="HelpDriverBuddyService.IHelpDriverBuddyService")]
     public interface IHelpDriverBuddyService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelpDriverBuddyService/GetVehicleProblems", ReplyAction="http://tempuri.org/IHelpDriverBuddyService/GetVehicleProblemsResponse")]
@@ -31,12 +31,12 @@ namespace HelpDriverBuddy.Service.ConsoleClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IHelpDriverBuddyServiceChannel : HelpDriverBuddy.Service.ConsoleClient.ServiceReference.IHelpDriverBuddyService, System.ServiceModel.IClientChannel {
+    public interface IHelpDriverBuddyServiceChannel : HelpDriverBuddy.Service.ConsoleClient.HelpDriverBuddyService.IHelpDriverBuddyService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class HelpDriverBuddyServiceClient : System.ServiceModel.ClientBase<HelpDriverBuddy.Service.ConsoleClient.ServiceReference.IHelpDriverBuddyService>, HelpDriverBuddy.Service.ConsoleClient.ServiceReference.IHelpDriverBuddyService {
+    public partial class HelpDriverBuddyServiceClient : System.ServiceModel.ClientBase<HelpDriverBuddy.Service.ConsoleClient.HelpDriverBuddyService.IHelpDriverBuddyService>, HelpDriverBuddy.Service.ConsoleClient.HelpDriverBuddyService.IHelpDriverBuddyService {
         
         public HelpDriverBuddyServiceClient() {
         }

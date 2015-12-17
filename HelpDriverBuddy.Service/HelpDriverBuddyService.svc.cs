@@ -1,9 +1,11 @@
 ﻿namespace HelpDriverBuddy.Service
 {
+    using System;
     using System.Collections.Generic;
     using System.Configuration;
     using System.Linq;
     using System.Threading.Tasks;
+    using System.IO;
     using Data;
     using Data.Models;
     using Data.Repositories;
@@ -15,8 +17,9 @@
 
         public HelpDriverBuddyService()
         {
-            var filePath = ConfigurationManager.AppSettings["STSdbFile"];
-            var stsdbContext = new STSdbContext(filePath);
+            var fileName = ConfigurationManager.AppSettings["STSdbFile"];
+            var dataDir = AppDomain.CurrentDomain.GetData("DataDirectory").ToString();
+            var stsdbContext = new STSdbContext(Path.Combine(dataDir, fileName));
             this.repository = new STSdbRepository<long, VehicleProblem>(stsdbContext);
         }
 

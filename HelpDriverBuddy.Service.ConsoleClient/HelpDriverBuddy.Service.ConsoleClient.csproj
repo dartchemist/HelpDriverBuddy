@@ -45,7 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Service References\ServiceReference\Reference.cs">
+    <Compile Include="Service References\HelpDriverBuddyService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceTest\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -55,14 +60,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Service References\ServiceReference\HelpDriverBuddyService.wsdl" />
-    <None Include="Service References\ServiceReference\HelpDriverBuddyService.xsd">
+    <None Include="Service References\HelpDriverBuddyService\HelpDriverBuddyService.wsdl" />
+    <None Include="Service References\HelpDriverBuddyService\HelpDriverBuddyService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference\HelpDriverBuddyService1.xsd">
+    <None Include="Service References\HelpDriverBuddyService\HelpDriverBuddyService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference\HelpDriverBuddyService2.xsd">
+    <None Include="Service References\HelpDriverBuddyService\HelpDriverBuddyService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceTest\HelpDriverBuddyService.wsdl" />
+    <None Include="Service References\ServiceReferenceTest\HelpDriverBuddyService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceTest\HelpDriverBuddyService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceTest\HelpDriverBuddyService2.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -80,19 +95,35 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServiceReference\" />
+    <WCFMetadataStorage Include="Service References\HelpDriverBuddyService\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceTest\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference\HelpDriverBuddyService.disco" />
+    <None Include="Service References\HelpDriverBuddyService\HelpDriverBuddyService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\HelpDriverBuddyService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference\configuration.svcinfo" />
+    <None Include="Service References\HelpDriverBuddyService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference\Reference.svcmap">
+    <None Include="Service References\HelpDriverBuddyService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceTest\HelpDriverBuddyService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceTest\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceTest\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceTest\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
