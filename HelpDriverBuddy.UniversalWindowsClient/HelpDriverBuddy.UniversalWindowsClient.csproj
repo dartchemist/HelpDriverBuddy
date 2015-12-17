@@ -98,8 +98,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Behaviors\PageLoadedBehavior.cs" />
     <Compile Include="Infrastructure\ChangeNotificationBase.cs" />
     <Compile Include="Infrastructure\DelegateCommand.cs" />
+    <Compile Include="Infrastructure\Unity\ContainerBootstrapper.cs" />
+    <Compile Include="Models\ModelWrapper.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Models\VehicleOwner.cs" />
     <Compile Include="Models\VehicleProblem.cs" />
@@ -140,6 +143,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\AppBarIcons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelpDriverBuddy.DummyServiceClient\HelpDriverBuddy.DummyServiceClient.csproj">
+      <Project>{07ea5ffd-2cf3-46fb-b06f-f8bf87a1b497}</Project>
+      <Name>HelpDriverBuddy.DummyServiceClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HelpDriverBuddy.Interfaces\HelpDriverBuddy.Interfaces.csproj">
+      <Project>{67ec3a2a-c778-4885-aee9-6bbdd722df54}</Project>
+      <Name>HelpDriverBuddy.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

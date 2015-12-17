@@ -26,7 +26,7 @@
             }
             catch
             {
-                AddProblem(FullProblemInformation infomation)
+                AddProblem(infomation);
             }
         }
 

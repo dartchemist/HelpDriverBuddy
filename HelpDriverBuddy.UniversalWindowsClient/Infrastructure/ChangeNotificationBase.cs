@@ -11,17 +11,7 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Infrastructure
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected bool SetField<T>(ref T field, T value, string propertyName)
-        {
-            if (EqualityComparer<T>.Default.Equals(field, value))
-                return false;
-
-            field = value;
-            OnPropertyChanged(propertyName);
-            return true;
-        }
-
-        private void OnPropertyChanged(string propertyName)
+        protected void OnPropertyChanged(string propertyName)
         {
             var handler = PropertyChanged;
             if (handler == null)

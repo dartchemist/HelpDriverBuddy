@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelpDriverBuddy.UniversalWindowsClient.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Views
         public RegisteredVehicleProblems()
         {
             this.InitializeComponent();
+            DataContext = App.Current.Resources["RegisteredVehicleProblemsViewModel"];
         }
     }
 }

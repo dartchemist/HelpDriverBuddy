@@ -1,4 +1,5 @@
-﻿using HelpDriverBuddy.UniversalWindowsClient.Infrastructure;
+﻿using HelpDriverBuddy.Interfaces.Models;
+using HelpDriverBuddy.UniversalWindowsClient.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,32 +8,34 @@ using System.Threading.Tasks;
 
 namespace HelpDriverBuddy.UniversalWindowsClient.Models
 {
-    public class Vehicle : ChangeNotificationBase
+    public class Vehicle : ModelWrapper<IVehicle>
     {
-        private string _make;
-        public string Make
+        public Vehicle(IVehicle businessModel) : base(businessModel)
         {
-            get { return _make; }
-            set { SetField(ref _make, value, nameof(Make)); }
+
         }
 
-        private string _model;
+        public string Brand
+        {
+            get { return GetPropertyValue<string>(nameof(Brand)); }
+            set { SetPropertyValue(value, nameof(Brand)); }
+        }
+
         public string Model
         {
-            get { return _model; }
-            set { SetField(ref _model, value, nameof(Model)); }
+            get { return GetPropertyValue<string>(nameof(Model)); }
+            set { SetPropertyValue(value, nameof(Model)); }
         }
 
-        public string MakeAndModel
+        public string RegistrationNumber
         {
-            get { return _make + " " + _model; }
+            get { return GetPropertyValue<string>(nameof(RegistrationNumber)); }
+            set { SetPropertyValue(value, nameof(RegistrationNumber)); }
         }
 
-        private string _registrationNumber;
-        public string RegisrationNumber
+        public string BrandAndModel
         {
-            get { return _registrationNumber; }
-            set { SetField(ref _registrationNumber, value, nameof(RegisrationNumber)); }
+            get { return $"{Brand} {Model}"; }
         }
 
     }

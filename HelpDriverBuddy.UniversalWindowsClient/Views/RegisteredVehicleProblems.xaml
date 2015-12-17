@@ -4,12 +4,28 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewModels="using:HelpDriverBuddy.UniversalWindowsClient.ViewModels"
+    xmlns:viewModels="using:HelpDriverBuddy.UniversalWindowsClient.ViewModels" 
+    xmlns:behaviors="using:HelpDriverBuddy.UniversalWindowsClient.Behaviors"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
     mc:Ignorable="d">
+    <i:Interaction.Behaviors>
+        <behaviors:PageLoadedBehavior Command="{Binding LoadVehicleProblemsCommand}"/>
+    </i:Interaction.Behaviors>
 
-    <Page.DataContext>
-        <viewModels:RegisteredVehicleProblemsViewModel />
-    </Page.DataContext>
+    <Page.Resources>
+        <DataTemplate x:Key="ProblemListViewItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Assets/Images/DefaultCarImage.png" 
+                       Width="100"
+                       Height="100"/>
+                <StackPanel Orientation="Vertical"
+                            VerticalAlignment="Center">
+                    <TextBlock Text="{Binding Vehicle.BrandAndModel}"/>
+                    <TextBlock Text="{Binding Vehicle.RegistrationNumber}"/>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
 
     <Page.BottomAppBar>
         <AppBar>
@@ -26,37 +42,8 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ListView Grid.Row="0"
-                  ItemsSource="{Binding VehicleProblems}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
+                  ItemsSource="{Binding VehicleProblems}"
+                  ItemTemplate="{StaticResource ProblemListViewItemTemplate}" />
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-
-                        <Image Grid.Row="0"
-                               Grid.RowSpan="2"
-                               Source="/Assets/Images/DefaultCarImage.png" 
-                               Width="100"
-                               Height="100"/>
-                        <TextBlock Grid.Row="0"
-                                   Grid.Column="1"
-                                   Text="{Binding Vehicle.MakeAndModel}"
-                                   VerticalAlignment="Center"
-                                   FontSize="20"/>
-                        <TextBlock Grid.Row="1"
-                                   Grid.Column="1"
-                                   Text="{Binding Vehicle.RegisrationNumber}" 
-                                   FontSize="20"/>
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
     </Grid>
 </Page>

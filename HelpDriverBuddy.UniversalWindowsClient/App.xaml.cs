@@ -1,4 +1,7 @@
-﻿using HelpDriverBuddy.UniversalWindowsClient.Views;
+﻿using HelpDriverBuddy.UniversalWindowsClient.Infrastructure.Unity;
+using HelpDriverBuddy.UniversalWindowsClient.ViewModels;
+using HelpDriverBuddy.UniversalWindowsClient.Views;
+using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -41,8 +44,13 @@ namespace HelpDriverBuddy.UniversalWindowsClient
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected async  override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            var unityContainer = new UnityContainer();
+            ContainerBootstrapper.RegisterTypes(unityContainer);
+            var registeredVehicleProblemsViewModel = unityContainer.Resolve<RegisteredVehicleProblemsViewModel>();
+            Resources["RegisteredVehicleProblemsViewModel"] = registeredVehicleProblemsViewModel;
+
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,

@@ -1,4 +1,5 @@
-﻿using HelpDriverBuddy.UniversalWindowsClient.Infrastructure;
+﻿using HelpDriverBuddy.Interfaces.Models;
+using HelpDriverBuddy.UniversalWindowsClient.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,23 +8,36 @@ using System.Threading.Tasks;
 
 namespace HelpDriverBuddy.UniversalWindowsClient.Models
 {
-    public class VehicleProblem : ChangeNotificationBase
+    public class VehicleProblem : ModelWrapper<IVehicleProblem>
     {
-        public VehicleOwner Owner { get; set; }
-        public Vehicle Vehicle { get; set; }
-
-        private string _description;
-        public string Description
+        public VehicleProblem(IVehicleProblem businessModel) : base(businessModel)
         {
-            get { return _description; }
-            set { SetField(ref _description, value, nameof(Description)); }
+            InitializeComplexProperties(businessModel);
         }
 
-        private bool _isResolved;
-        public bool IsResolved
+        public Vehicle Vehicle { get; private set; }
+        public VehicleOwner VehicleOwner { get; private set; }
+
+        public string Description
         {
-            get { return _isResolved; }
-            set { SetField(ref _isResolved, value, nameof(IsResolved)); }
+            get { return GetPropertyValue<string>(nameof(Description)); }
+            set { SetPropertyValue(value, nameof(Description)); }
+        }
+
+        private void InitializeComplexProperties(IVehicleProblem model)
+        {
+            if (model.Vehicle == null)
+            {
+                throw new ArgumentException("Vehicle cannot be null");
+            }
+
+            if (model.VehicleOwner == null)
+            {
+                throw new ArgumentException("Owner cannot be null");
+            }
+
+            Vehicle = new Vehicle(model.Vehicle);
+            VehicleOwner = new VehicleOwner(model.VehicleOwner);
         }
     }
 }
