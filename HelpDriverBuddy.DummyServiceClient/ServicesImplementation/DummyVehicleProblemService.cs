@@ -13,9 +13,159 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
     {
         public async Task<IEnumerable<IVehicleProblem>> GetVehicleProblems()
         {
-            await Task.Delay(1 * 1000);
+            await Task.Delay(15 * 1000);
             var result = new List<VehicleProblemModel>
             {
+                new VehicleProblemModel
+                {
+                    Description = "Dummy Description",
+                    Vehicle = new VehicleModel
+                    {
+                        Brand = "Ford",
+                        Model = "Fusion",
+                        RegistrationNumber = "CB 0000 CE"
+                    },
+                    VehicleOwner = new VehicleOwnerModel
+                    {
+                        Name = "Slav Petkov",
+                        PhoneNumber = "0800123456"
+                    }
+                },
+                new VehicleProblemModel
+                {
+                    Description = "Dummy Description",
+                    Vehicle = new VehicleModel
+                    {
+                        Brand = "Ford",
+                        Model = "Fusion",
+                        RegistrationNumber = "CB 0000 CE"
+                    },
+                    VehicleOwner = new VehicleOwnerModel
+                    {
+                        Name = "Slav Petkov",
+                        PhoneNumber = "0800123456"
+                    }
+                },
+                new VehicleProblemModel
+                {
+                    Description = "Dummy Description",
+                    Vehicle = new VehicleModel
+                    {
+                        Brand = "Ford",
+                        Model = "Fusion",
+                        RegistrationNumber = "CB 0000 CE"
+                    },
+                    VehicleOwner = new VehicleOwnerModel
+                    {
+                        Name = "Slav Petkov",
+                        PhoneNumber = "0800123456"
+                    }
+                },
+                new VehicleProblemModel
+                {
+                    Description = "Dummy Description",
+                    Vehicle = new VehicleModel
+                    {
+                        Brand = "Ford",
+                        Model = "Fusion",
+                        RegistrationNumber = "CB 0000 CE"
+                    },
+                    VehicleOwner = new VehicleOwnerModel
+                    {
+                        Name = "Slav Petkov",
+                        PhoneNumber = "0800123456"
+                    }
+                },
+                new VehicleProblemModel
+                {
+                    Description = "Dummy Description",
+                    Vehicle = new VehicleModel
+                    {
+                        Brand = "Ford",
+                        Model = "Fusion",
+                        RegistrationNumber = "CB 0000 CE"
+                    },
+                    VehicleOwner = new VehicleOwnerModel
+                    {
+                        Name = "Slav Petkov",
+                        PhoneNumber = "0800123456"
+                    }
+                },
+                new VehicleProblemModel
+                {
+                    Description = "Dummy Description",
+                    Vehicle = new VehicleModel
+                    {
+                        Brand = "Ford",
+                        Model = "Fusion",
+                        RegistrationNumber = "CB 0000 CE"
+                    },
+                    VehicleOwner = new VehicleOwnerModel
+                    {
+                        Name = "Slav Petkov",
+                        PhoneNumber = "0800123456"
+                    }
+                },
+                new VehicleProblemModel
+                {
+                    Description = "Dummy Description",
+                    Vehicle = new VehicleModel
+                    {
+                        Brand = "Ford",
+                        Model = "Fusion",
+                        RegistrationNumber = "CB 0000 CE"
+                    },
+                    VehicleOwner = new VehicleOwnerModel
+                    {
+                        Name = "Slav Petkov",
+                        PhoneNumber = "0800123456"
+                    }
+                },
+                new VehicleProblemModel
+                {
+                    Description = "Dummy Description",
+                    Vehicle = new VehicleModel
+                    {
+                        Brand = "Ford",
+                        Model = "Fusion",
+                        RegistrationNumber = "CB 0000 CE"
+                    },
+                    VehicleOwner = new VehicleOwnerModel
+                    {
+                        Name = "Slav Petkov",
+                        PhoneNumber = "0800123456"
+                    }
+                },
+                new VehicleProblemModel
+                {
+                    Description = "Dummy Description",
+                    Vehicle = new VehicleModel
+                    {
+                        Brand = "Ford",
+                        Model = "Fusion",
+                        RegistrationNumber = "CB 0000 CE"
+                    },
+                    VehicleOwner = new VehicleOwnerModel
+                    {
+                        Name = "Slav Petkov",
+                        PhoneNumber = "0800123456"
+                    }
+                },
+                new VehicleProblemModel
+                {
+                    Description = "Dummy Description",
+                    Vehicle = new VehicleModel
+                    {
+                        Brand = "Ford",
+                        Model = "Fusion",
+                        RegistrationNumber = "CB 0000 CE"
+                    },
+                    VehicleOwner = new VehicleOwnerModel
+                    {
+                        Name = "Slav Petkov",
+                        PhoneNumber = "0800123456"
+                    }
+                },
                 new VehicleProblemModel
                 {
                     Description = "Dummy Description",

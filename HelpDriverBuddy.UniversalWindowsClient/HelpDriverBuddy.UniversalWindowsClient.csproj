@@ -99,6 +99,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Behaviors\PageLoadedBehavior.cs" />
+    <Compile Include="Converters\ByteArrayToImageConverter.cs" />
     <Compile Include="Infrastructure\ChangeNotificationBase.cs" />
     <Compile Include="Infrastructure\DelegateCommand.cs" />
     <Compile Include="Infrastructure\Unity\ContainerBootstrapper.cs" />
