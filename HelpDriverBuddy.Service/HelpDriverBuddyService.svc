@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="HelpDriverBuddy.Service.Service1" CodeBehind="HelpDriverBuddyService.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="HelpDriverBuddy.Service.HelpDriverBuddyService" CodeBehind="HelpDriverBuddyService.svc.cs" %>

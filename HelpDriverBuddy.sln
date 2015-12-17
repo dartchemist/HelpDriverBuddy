@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDriverBuddy.Interfaces"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDriverBuddy.DummyServiceClient", "HelpDriverBuddy.DummyServiceClient\HelpDriverBuddy.DummyServiceClient.csproj", "{07EA5FFD-2CF3-46FB-B06F-F8BF87A1B497}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDriverBuddy.Service.ConsoleClient", "HelpDriverBuddy.Service.ConsoleClient\HelpDriverBuddy.Service.ConsoleClient.csproj", "{0E671A3A-9573-4862-B8FE-95A54D8F10DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,22 @@ Global
 		{07EA5FFD-2CF3-46FB-B06F-F8BF87A1B497}.Release|x64.Build.0 = Release|Any CPU
 		{07EA5FFD-2CF3-46FB-B06F-F8BF87A1B497}.Release|x86.ActiveCfg = Release|Any CPU
 		{07EA5FFD-2CF3-46FB-B06F-F8BF87A1B497}.Release|x86.Build.0 = Release|Any CPU
+		{0E671A3A-9573-4862-B8FE-95A54D8F10DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E671A3A-9573-4862-B8FE-95A54D8F10DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E671A3A-9573-4862-B8FE-95A54D8F10DD}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{0E671A3A-9573-4862-B8FE-95A54D8F10DD}.Debug|ARM.Build.0 = Debug|Any CPU
+		{0E671A3A-9573-4862-B8FE-95A54D8F10DD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0E671A3A-9573-4862-B8FE-95A54D8F10DD}.Debug|x64.Build.0 = Debug|Any CPU
+		{0E671A3A-9573-4862-B8FE-95A54D8F10DD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0E671A3A-9573-4862-B8FE-95A54D8F10DD}.Debug|x86.Build.0 = Debug|Any CPU
+		{0E671A3A-9573-4862-B8FE-95A54D8F10DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E671A3A-9573-4862-B8FE-95A54D8F10DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E671A3A-9573-4862-B8FE-95A54D8F10DD}.Release|ARM.ActiveCfg = Release|Any CPU
+		{0E671A3A-9573-4862-B8FE-95A54D8F10DD}.Release|ARM.Build.0 = Release|Any CPU
+		{0E671A3A-9573-4862-B8FE-95A54D8F10DD}.Release|x64.ActiveCfg = Release|Any CPU
+		{0E671A3A-9573-4862-B8FE-95A54D8F10DD}.Release|x64.Build.0 = Release|Any CPU
+		{0E671A3A-9573-4862-B8FE-95A54D8F10DD}.Release|x86.ActiveCfg = Release|Any CPU
+		{0E671A3A-9573-4862-B8FE-95A54D8F10DD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,9 +1,10 @@
-﻿using System.Runtime.Serialization;
-
-namespace HelpDriverBuddy.Data.Models
+﻿namespace HelpDriverBuddy.Data.Models
 {
+    using System.Runtime.Serialization;
+    using HelpDriverBuddy.Interfaces.Models;
+
     [DataContract]
-    public class ProblemLocation
+    public class Location : ILocation
     {
         [DataMember]
         public double Longitude { get; set; }

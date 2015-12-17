@@ -1,7 +1,6 @@
 ﻿namespace HelpDriverBuddy.Data
 {
     using System;
-    using System.Collections.Generic;
     using STSdb4.Database;
     using Models;
 
@@ -17,14 +16,14 @@
             }
 
             this.storageEngine = STSdb.FromFile(filePath);
-            this.TableProblem = this.storageEngine.OpenXTable<Guid, FullProblemInformation>("Problems");
+            this.TableProblem = this.storageEngine.OpenXTable<long, VehicleProblem>("Problems");
         }
 
-        public ITable<Guid, FullProblemInformation> TableProblem { get; private set; }
+        public ITable<long, VehicleProblem> TableProblem { get; private set; }
 
         public ITable<TKey, TValue> Table<TKey, TValue>()
         {
-            if (typeof(TKey) == typeof(Guid) && typeof(TValue) == typeof(FullProblemInformation))
+            if (typeof(TKey) == typeof(long) && typeof(TValue) == typeof(VehicleProblem))
             {
                 return (ITable<TKey, TValue>)this.TableProblem;
             }
