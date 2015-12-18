@@ -41,6 +41,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.ServiceModel" />
@@ -65,6 +69,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\AutoMapperConfig.cs" />
     <Compile Include="HelpDriverBuddyService.svc.cs">
       <DependentUpon>HelpDriverBuddyService.svc</DependentUpon>
     </Compile>
@@ -75,6 +80,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\ftp.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -96,9 +102,10 @@
       <Project>{67ec3a2a-c778-4885-aee9-6bbdd722df54}</Project>
       <Name>HelpDriverBuddy.Interfaces</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <ProjectReference Include="..\HelpDriverBuddy.Service.Models\HelpDriverBuddy.Service.Models.csproj">
+      <Project>{53360eaf-3ff3-40e9-9fa2-3abfa41beb0e}</Project>
+      <Name>HelpDriverBuddy.Service.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

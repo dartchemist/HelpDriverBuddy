@@ -12,6 +12,6 @@
         [OperationContract]
         Task<IEnumerable<IVehicleProblem>> GetVehicleProblems();
         [OperationContract]
-        void AddProblem(IVehicleProblem infomation);
+        Task AddProblem(IVehicleProblem infomation);
     }
 }
