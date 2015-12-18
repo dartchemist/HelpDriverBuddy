@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="using:HelpDriverBuddy.UniversalWindowsClient.ViewModels" 
+    xmlns:converters="using:HelpDriverBuddy.UniversalWindowsClient.Converters"
     xmlns:behaviors="using:HelpDriverBuddy.UniversalWindowsClient.Behaviors"
     xmlns:i="using:Microsoft.Xaml.Interactivity"
     mc:Ignorable="d">
@@ -13,9 +14,10 @@
     </i:Interaction.Behaviors>
 
     <Page.Resources>
+        <converters:ByteArrayToImageConverter x:Key="ImageConverter"/>
         <DataTemplate x:Key="ProblemListViewItemTemplate">
             <StackPanel Orientation="Horizontal">
-                <Image Source="/Assets/Images/DefaultCarImage.png" 
+                <Image Source="{Binding Vehicle.Image, Mode=TwoWay, Converter={StaticResource ImageConverter}}" 
                        Width="100"
                        Height="100"/>
                 <StackPanel Orientation="Vertical"
@@ -29,19 +31,33 @@
 
     <Page.BottomAppBar>
         <AppBar>
-            <AppBarButton Label="Problem"
-                          HorizontalAlignment="Center"/>
+            <Grid>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Width="Auto">
+                    <AppBarButton Label="Problem"
+                              Icon="Add"
+                              HorizontalAlignment="Center" />
+                    <AppBarButton Label="Refresh"
+                              Icon="Refresh"
+                              HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+            
+            
         </AppBar>
     </Page.BottomAppBar>
 
-    <Page.TopAppBar>
+    <!--<Page.TopAppBar>
         <AppBar>
             
         </AppBar>
-    </Page.TopAppBar>
+    </Page.TopAppBar>-->
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView Grid.Row="0"
+        <ProgressRing Foreground="Red"
+                      IsActive="True"/>
+        <GridView Grid.Row="0"
                   ItemsSource="{Binding VehicleProblems}"
                   ItemTemplate="{StaticResource ProblemListViewItemTemplate}" />
 

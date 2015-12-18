@@ -44,7 +44,7 @@ namespace HelpDriverBuddy.UniversalWindowsClient
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected async  override void OnLaunched(LaunchActivatedEventArgs e)
+        protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
             var unityContainer = new UnityContainer();
             ContainerBootstrapper.RegisterTypes(unityContainer);

@@ -33,6 +33,12 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Models
             set { SetPropertyValue(value, nameof(RegistrationNumber)); }
         }
 
+        public byte[] Image
+        {
+            get { return GetPropertyValue<byte[]>(nameof(Image)); }
+            set { SetPropertyValue(value, nameof(Image)); }
+        }
+
         public string BrandAndModel
         {
             get { return $"{Brand} {Model}"; }

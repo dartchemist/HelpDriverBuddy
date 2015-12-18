@@ -121,6 +121,8 @@
     <None Include="HelpDriverBuddy.UniversalWindowsClient_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AppBarIcons\appbar.add.png" />
+    <Content Include="Assets\AppBarIcons\appbar.refresh.png" />
     <Content Include="Assets\Images\DefaultCarImage.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -143,9 +145,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\AppBarIcons\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\HelpDriverBuddy.DummyServiceClient\HelpDriverBuddy.DummyServiceClient.csproj">
       <Project>{07ea5ffd-2cf3-46fb-b06f-f8bf87a1b497}</Project>

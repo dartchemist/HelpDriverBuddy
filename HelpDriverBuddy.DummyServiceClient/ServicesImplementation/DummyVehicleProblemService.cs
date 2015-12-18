@@ -1,5 +1,6 @@
 ﻿using HelpDriverBuddy.Interfaces.Services;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
     {
         public async Task<IEnumerable<IVehicleProblem>> GetVehicleProblems()
         {
-            await Task.Delay(15 * 1000);
+            await Task.Delay(2 * 1000);
             var result = new List<VehicleProblemModel>
             {
                 new VehicleProblemModel
@@ -23,7 +24,7 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
                     {
                         Brand = "Ford",
                         Model = "Fusion",
-                        RegistrationNumber = "CB 0000 CE"
+                        RegistrationNumber = "CB 0000 CE",
                     },
                     VehicleOwner = new VehicleOwnerModel
                     {
