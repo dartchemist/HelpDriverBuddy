@@ -1,7 +1,6 @@
 ﻿namespace HelpDriverBuddy.Service.ConsoleClient
 {
-    using ServiceReferenceTest;
-    using System.ServiceModel;
+    using HelpDriverBuddy.Service.ConsoleClient.HelpDriverBuddyService;
 
     public class StartUp
     {

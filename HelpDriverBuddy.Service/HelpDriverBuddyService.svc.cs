@@ -6,6 +6,7 @@
     using System.Linq;
     using System.Threading.Tasks;
     using System.IO;
+    using System.ServiceModel;
     using AutoMapper;
     using Data;
     using Data.Repositories;
@@ -14,7 +15,7 @@
     using Config;
 
     using DatabaseVehicleProblem = HelpDriverBuddy.Data.Models.VehicleProblem;
-  
+
     public class HelpDriverBuddyService : IHelpDriverBuddyService
     {
         private IRepository<long, DatabaseVehicleProblem> repository;
@@ -32,21 +33,35 @@
 
         public Task AddProblem(IVehicleProblem problem)
         {
-            return Task.Run(() =>
-             {
-                 var last = repository.All().Last();
-                 this.repository.Replace(last.Key + 1, Mapper.Map<DatabaseVehicleProblem>(problem));
-             }
-             );
+            try
+            {
+                return Task.Run(() =>
+                    {
+                        var last = repository.All().Last();
+                        this.repository.Replace(last.Key + 1, Mapper.Map<DatabaseVehicleProblem>(problem));
+                    }
+                 );
+            }
+            catch (Exception e)
+            {
+                throw new FaultException(e.Message);
+            }
         }
 
         public Task<IEnumerable<IVehicleProblem>> GetVehicleProblems()
         {
-            return Task<IEnumerable<IVehicleProblem>>.Run(() => 
-                this.repository
-                .All()
-                .Select(x=> 
-                    (IVehicleProblem)Mapper.Map<VehicleProblem>(x.Value)));
+            try
+            {
+                return Task<IEnumerable<IVehicleProblem>>.Run(() =>
+                    this.repository
+                    .All()
+                    .Select(x =>
+                        (IVehicleProblem)Mapper.Map<VehicleProblem>(x.Value)));
+            }
+            catch (Exception e)
+            {
+                throw new FaultException(e.Message);
+            }
         }
     }
 }
