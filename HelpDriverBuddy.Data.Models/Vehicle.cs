@@ -9,5 +9,7 @@
         public string RegistrationNumber { get; set; }
 
         public byte[] Image { get; set; }
+
+        public string ImageExt { get; set; }
     }
 }

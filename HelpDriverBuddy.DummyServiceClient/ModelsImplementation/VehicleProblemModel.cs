@@ -14,5 +14,7 @@ namespace HelpDriverBuddy.DummyServiceClient.ModelsImplementation
         public IVehicle Vehicle { get; set; }
 
         public IVehicleOwner VehicleOwner { get; set; }
+
+        public DateTime CreateOn { get; set; }
     }
 }

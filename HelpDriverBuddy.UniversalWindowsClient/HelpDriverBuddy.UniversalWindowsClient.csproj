@@ -112,8 +112,12 @@
     <Compile Include="ViewModels\PostNewProblemViewModel.cs" />
     <Compile Include="ViewModels\ProblemInfoViewModel.cs" />
     <Compile Include="ViewModels\RegisteredVehicleProblemsViewModel.cs" />
+    <Compile Include="ViewModels\RegisterVehicleProblemViewModel.cs" />
     <Compile Include="Views\RegisteredVehicleProblems.xaml.cs">
       <DependentUpon>RegisteredVehicleProblems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterVehicleProblem.xaml.cs">
+      <DependentUpon>RegisterVehicleProblem.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +147,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\RegisteredVehicleProblems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegisterVehicleProblem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

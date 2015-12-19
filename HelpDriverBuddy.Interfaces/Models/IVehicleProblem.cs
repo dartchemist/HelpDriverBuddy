@@ -11,5 +11,6 @@ namespace HelpDriverBuddy.Interfaces.Models
         IVehicle Vehicle { get; set; }
         IVehicleOwner VehicleOwner { get; set; }
         string Description { get; set; }
+        DateTime CreateOn { get; set; }
     }
 }

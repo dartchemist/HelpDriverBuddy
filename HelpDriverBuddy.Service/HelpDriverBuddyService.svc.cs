@@ -10,11 +10,11 @@
     using AutoMapper;
     using Data;
     using Data.Repositories;
-    using Interfaces.Models;
     using Models;
     using Config;
 
     using DatabaseVehicleProblem = HelpDriverBuddy.Data.Models.VehicleProblem;
+    using Data.Models;
 
     public class HelpDriverBuddyService : IHelpDriverBuddyService
     {
@@ -27,20 +27,16 @@
             var stsdbContext = new STSdbContext(Path.Combine(dataDir, fileName));
             this.repository = new STSdbRepository<long, DatabaseVehicleProblem>(stsdbContext);
 
-            AutoMapperConfig.RegisterMappings(new KeyValuePair<Type, Type>(typeof(DatabaseVehicleProblem), typeof(VehicleProblem)));
-            AutoMapperConfig.RegisterMappings(new KeyValuePair<Type, Type>(typeof(IVehicleProblem), typeof(DatabaseVehicleProblem)));
+            AutoMapperConfig.RegisterMappings(new KeyValuePair<Type, Type>(typeof(DatabaseVehicleProblem), typeof(Models.VehicleProblem)));
         }
 
-        public Task AddProblem(IVehicleProblem problem)
+        public void AddVecleProblem(Models.VehicleProblem problem)
         {
             try
             {
-                return Task.Run(() =>
-                    {
-                        var last = repository.All().Last();
-                        this.repository.Replace(last.Key + 1, Mapper.Map<DatabaseVehicleProblem>(problem));
-                    }
-                 );
+
+                var last = repository.All().Last();
+                this.repository.Replace(last.Key + 1, Mapper.Map<DatabaseVehicleProblem>(problem));
             }
             catch (Exception e)
             {
@@ -48,15 +44,14 @@
             }
         }
 
-        public Task<IEnumerable<IVehicleProblem>> GetVehicleProblems()
+        public IEnumerable<Models.VehicleProblem> GetVehicleProblems()
         {
             try
             {
-                return Task<IEnumerable<IVehicleProblem>>.Run(() =>
-                    this.repository
+                return this.repository
                     .All()
                     .Select(x =>
-                        (IVehicleProblem)Mapper.Map<VehicleProblem>(x.Value)));
+                        Mapper.Map<Models.VehicleProblem>(x.Value));
             }
             catch (Exception e)
             {

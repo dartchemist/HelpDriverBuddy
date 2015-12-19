@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="16169b86-90dd-4dc3-94d6-3e74cfff563b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://helpbuddy-001-site1.btempurl.com/HelpDriverBuddyService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="HelpDriverBuddyService.wsdl" MetadataType="Wsdl" ID="e966ffbb-c273-4081-bc60-0cdd9536f490" SourceId="1" SourceUrl="http://helpbuddy-001-site1.btempurl.com/HelpDriverBuddyService.svc?wsdl" />
+    <MetadataFile FileName="HelpDriverBuddyService.xsd" MetadataType="Schema" ID="b0ad8fa7-6771-46a3-8650-0de57a4a6b92" SourceId="1" SourceUrl="http://helpbuddy-001-site1.btempurl.com/HelpDriverBuddyService.svc?xsd=xsd1" />
+    <MetadataFile FileName="HelpDriverBuddyService1.xsd" MetadataType="Schema" ID="bba849dc-5810-4b70-acbb-fbac3e005bfe" SourceId="1" SourceUrl="http://helpbuddy-001-site1.btempurl.com/HelpDriverBuddyService.svc?xsd=xsd2" />
+    <MetadataFile FileName="HelpDriverBuddyService.disco" MetadataType="Disco" ID="009955bd-1140-4822-b696-88f3266dc4d5" SourceId="1" SourceUrl="http://helpbuddy-001-site1.btempurl.com/HelpDriverBuddyService.svc?disco" />
+    <MetadataFile FileName="HelpDriverBuddyService2.xsd" MetadataType="Schema" ID="4d2ae375-73fc-40f2-b8d1-a55309c42df6" SourceId="1" SourceUrl="http://helpbuddy-001-site1.btempurl.com/HelpDriverBuddyService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
