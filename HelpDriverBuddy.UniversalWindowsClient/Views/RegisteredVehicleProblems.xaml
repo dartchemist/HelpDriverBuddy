@@ -37,7 +37,8 @@
                             Width="Auto">
                     <AppBarButton Label="Problem"
                               Icon="Add"
-                              HorizontalAlignment="Center" />
+                              HorizontalAlignment="Center" 
+                              Click="AddProblemClicked"/>
                     <AppBarButton Label="Refresh"
                               Icon="Refresh"
                               HorizontalAlignment="Center"/>
@@ -55,8 +56,6 @@
     </Page.TopAppBar>-->
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ProgressRing Foreground="Red"
-                      IsActive="True"/>
         <GridView Grid.Row="0"
                   ItemsSource="{Binding VehicleProblems}"
                   ItemTemplate="{StaticResource ProblemListViewItemTemplate}" />

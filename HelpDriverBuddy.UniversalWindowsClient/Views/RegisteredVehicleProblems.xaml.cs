@@ -29,5 +29,10 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Views
             DataContext = App.Current.Resources["RegisteredVehicleProblemsViewModel"];
   
         }
+
+        private void AddProblemClicked(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(RegisterVehicleProblem));
+        }
     }
 }

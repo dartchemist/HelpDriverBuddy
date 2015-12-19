@@ -3,40 +3,47 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:HelpDriverBuddy.UniversalWindowsClient.Views"
+    xmlns:helpers="using:HelpDriverBuddy.UniversalWindowsClient.Helpers"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel>
-        <TextBlock Text="Problem Information Form" />
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <TextBlock Text="Car brand" Grid.Row="0" Grid.Column="0"/>
-            <TextBox Name="tbBrand" Grid.Row="0" Grid.Column="1"/>
-            <TextBlock Text="Model" Grid.Row="1" Grid.Column="0"/>
-            <TextBox Name="tbModel" Grid.Row="1" Grid.Column="1"/>
-            <TextBlock Text="Registration Number:" Grid.Row="2" Grid.Column="0"/>
-            <TextBox Name="tbRegistrationNumber" Grid.Row="2" Grid.Column="1"/>
-            <TextBlock Text="Problem:" Grid.Row="3" Grid.Column="0"/>
-            <TextBox Name="tbProblem" Grid.Row="3" Grid.Column="1"/>
-            <TextBlock Text="Owner name:" Grid.Row="4" Grid.Column="0"/>
-            <TextBox Name="tbOwnerName" Grid.Row="4" Grid.Column="1"/>
-            <TextBlock Text="Phone number:" Grid.Row="5" Grid.Column="0"/>
-            <TextBox Name="tbPhoneNumber" Grid.Row="5" Grid.Column="1"/>
-            <Button Content="Add" HorizontalContentAlignment="Stretch"  Grid.Row="6" Grid.Column="0"/>
-            <Button Content="Cancel" HorizontalContentAlignment="Stretch" Grid.Row="6" Grid.Column="1"/>
+    <Page.Resources>
+        <Style x:Key="PageTitle"
+               TargetType="TextBlock">
+            <Setter Property="FontSize"
+                    Value="30" />
+        </Style>
+        
+        <Style x:Key="ProblemInputPanelElement"
+               TargetType="FrameworkElement">
+            <Setter Property="Margin"
+                    Value="0, 20, 0, 0" />
+        </Style>
+    </Page.Resources>
+
+    <StackPanel Grid.Row="0" 
+                Orientation="Vertical"
+                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock HorizontalAlignment="Center"
+                   Text="Problem Information" 
+                   Style="{StaticResource PageTitle}"/>
+        <TextBox PlaceholderText="Vehicle Brand"
+                 Style="{StaticResource ProblemInputPanelElement}"/>
+        <TextBox PlaceholderText="Vehicle Model"
+                 Style="{StaticResource ProblemInputPanelElement}"/>
+        <TextBox PlaceholderText="Registration Number"
+                 Style="{StaticResource ProblemInputPanelElement}"/>
+        <TextBox PlaceholderText="Problem Description"
+                 Style="{StaticResource ProblemInputPanelElement}"/>
+        <TextBox PlaceholderText="Owner Name"
+                 Style="{StaticResource ProblemInputPanelElement}"/>
+        <TextBox PlaceholderText="Phone Number"
+                 Style="{StaticResource ProblemInputPanelElement}"/>
+        <Grid Margin="0, 20, 0, 0">
+            <Button HorizontalAlignment="Center"
+                    Content="Add Problem" />
         </Grid>
     </StackPanel>
+
 </Page>
