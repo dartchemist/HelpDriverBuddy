@@ -109,6 +109,8 @@
     <Compile Include="Models\VehicleOwner.cs" />
     <Compile Include="Models\VehicleProblem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\PostNewProblemViewModel.cs" />
+    <Compile Include="ViewModels\ProblemInfoViewModel.cs" />
     <Compile Include="ViewModels\RegisteredVehicleProblemsViewModel.cs" />
     <Compile Include="Views\RegisteredVehicleProblems.xaml.cs">
       <DependentUpon>RegisteredVehicleProblems.xaml</DependentUpon>

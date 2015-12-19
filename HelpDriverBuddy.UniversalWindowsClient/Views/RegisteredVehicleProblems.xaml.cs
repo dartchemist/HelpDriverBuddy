@@ -27,6 +27,7 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Views
         {
             this.InitializeComponent();
             DataContext = App.Current.Resources["RegisteredVehicleProblemsViewModel"];
+  
         }
     }
 }
