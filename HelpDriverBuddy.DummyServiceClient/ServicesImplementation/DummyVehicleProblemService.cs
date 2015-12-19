@@ -12,6 +12,11 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
 {
     public class DummyVehicleProblemService : IVehicleProblemService
     {
+        public Task AddVecleProblem(IVehicleProblem problem)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<IVehicleProblem>> GetVehicleProblems()
         {
             await Task.Delay(2 * 1000);

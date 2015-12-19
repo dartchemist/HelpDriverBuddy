@@ -98,10 +98,6 @@
       <Project>{e3635891-90e7-4a93-b222-0e5698547643}</Project>
       <Name>HelpDriverBuddy.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HelpDriverBuddy.Interfaces\HelpDriverBuddy.Interfaces.csproj">
-      <Project>{67ec3a2a-c778-4885-aee9-6bbdd722df54}</Project>
-      <Name>HelpDriverBuddy.Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\HelpDriverBuddy.Service.Models\HelpDriverBuddy.Service.Models.csproj">
       <Project>{53360eaf-3ff3-40e9-9fa2-3abfa41beb0e}</Project>
       <Name>HelpDriverBuddy.Service.Models</Name>

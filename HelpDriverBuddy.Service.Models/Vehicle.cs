@@ -18,5 +18,8 @@
 
         [DataMember]
         public byte[] Image { get; set; }
+
+        [DataMember]
+        public string ImageExt { get; set; }
     }
 }

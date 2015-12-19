@@ -9,6 +9,8 @@ namespace HelpDriverBuddy.Interfaces.Services
 {
     public interface IVehicleProblemService
     {
+        Task AddVecleProblem(IVehicleProblem problem);
+
         Task<IEnumerable<IVehicleProblem>> GetVehicleProblems();
     }
 }

@@ -3,15 +3,14 @@
     using System.Collections.Generic;
     using System.ServiceModel;
     using System.Threading.Tasks;
-    using Interfaces.Services;
-    using Interfaces.Models;
+    using Service.Models;
 
     [ServiceContract]
-    public interface IHelpDriverBuddyService : IVehicleProblemService
+    public interface IHelpDriverBuddyService
     {
         [OperationContract]
-        Task<IEnumerable<IVehicleProblem>> GetVehicleProblems();
+        IEnumerable<VehicleProblem> GetVehicleProblems();
         [OperationContract]
-        Task AddProblem(IVehicleProblem infomation);
+        void AddVecleProblem(VehicleProblem infomation);
     }
 }

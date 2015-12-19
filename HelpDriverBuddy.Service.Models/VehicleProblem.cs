@@ -1,8 +1,8 @@
 ﻿namespace HelpDriverBuddy.Service.Models
 {
+    using System;
     using System.Runtime.Serialization;
     using HelpDriverBuddy.Interfaces.Models;
-
 
     [DataContract]
     public class VehicleProblem : IVehicleProblem
@@ -38,6 +38,9 @@
                 this.vehicleOwner = value as VehicleOwner;
             }
         }
+
+        [DataMember]
+        public DateTime CreateOn { get; set; }
 
         public static VehicleProblem From(IVehicleProblem problem)
         {
