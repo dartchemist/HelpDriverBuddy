@@ -25,6 +25,7 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Views
         public RegisterVehicleProblem()
         {
             this.InitializeComponent();
+            
         }
     }
 }

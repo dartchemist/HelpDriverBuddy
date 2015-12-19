@@ -1,6 +1,7 @@
 ﻿using HelpDriverBuddy.Interfaces.Models;
 using HelpDriverBuddy.Interfaces.Services;
 using HelpDriverBuddy.UniversalWindowsClient.Infrastructure;
+using HelpDriverBuddy.UniversalWindowsClient.Infrastructure.Dialogs;
 using HelpDriverBuddy.UniversalWindowsClient.Models;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace HelpDriverBuddy.UniversalWindowsClient.ViewModels
     public class RegisteredVehicleProblemsViewModel : ChangeNotificationBase
     {
         private readonly IVehicleProblemService _vehicleProblemService;
+        private readonly IDialogService _dialogService;
 
         private ObservableCollection<VehicleProblem> _vehicleProblems;
         public ObservableCollection<VehicleProblem> VehicleProblems
@@ -47,22 +49,31 @@ namespace HelpDriverBuddy.UniversalWindowsClient.ViewModels
 
         private async void LoadVehicleData(object parameter)
         {
-            var vehicleProblems = ToObservableCollection(
-                    await _vehicleProblemService.GetVehicleProblems());
-
-            foreach (var vehicleProblem in vehicleProblems)
+            try
             {
-                if (_vehicleProblems.Contains(vehicleProblem))
-                    continue;
-                _vehicleProblems.Add(vehicleProblem);
+                var vehicleProblems = ToObservableCollection(
+                   await _vehicleProblemService.GetVehicleProblems());
+
+                foreach (var vehicleProblem in vehicleProblems)
+                {
+                    if (_vehicleProblems.Contains(vehicleProblem))
+                        continue;
+                    _vehicleProblems.Add(vehicleProblem);
+                }
             }
+            catch (Exception)
+            {
+                await _dialogService.ShowMessage("Could not load current vehicle problems");
+            }
+           
         }
 
         #endregion Commands
 
-        public RegisteredVehicleProblemsViewModel(IVehicleProblemService vehicleProblemService)
+        public RegisteredVehicleProblemsViewModel(IVehicleProblemService vehicleProblemService, IDialogService dialogService)
         {
             _vehicleProblemService = vehicleProblemService;
+            _dialogService = dialogService;
         }
 
         private ObservableCollection<VehicleProblem> ToObservableCollection(IEnumerable<IVehicleProblem> vehicleProblems)

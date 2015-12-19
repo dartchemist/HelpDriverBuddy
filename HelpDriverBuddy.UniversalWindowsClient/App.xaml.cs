@@ -38,11 +38,9 @@ namespace HelpDriverBuddy.UniversalWindowsClient
             ContainerBootstrapper.RegisterTypes(unityContainer);
 
             var registeredVehicleProblemsViewModel = unityContainer.Resolve<RegisteredVehicleProblemsViewModel>();
-            var problemInfoViewModel = unityContainer.Resolve<ProblemInfoViewModel>();
             var postNewProblemViewModel = unityContainer.Resolve<PostNewProblemViewModel>();
 
             Resources["RegisteredVehicleProblemsViewModel"] = registeredVehicleProblemsViewModel;
-            Resources["ProblemInfoViewModel"] = problemInfoViewModel;
             Resources["PostNewProblemViewModel"] = postNewProblemViewModel;
 
             Frame rootFrame = Window.Current.Content as Frame;

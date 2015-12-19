@@ -4,10 +4,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:HelpDriverBuddy.UniversalWindowsClient.Views"
     xmlns:helpers="using:HelpDriverBuddy.UniversalWindowsClient.Helpers"
+    xmlns:behaviors="using:HelpDriverBuddy.UniversalWindowsClient.Behaviors"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
-
+    mc:Ignorable="d"
+    x:Name="page">
+    
     <Page.Resources>
         <Style x:Key="PageTitle"
                TargetType="TextBlock">
@@ -22,28 +24,37 @@
         </Style>
     </Page.Resources>
 
-    <StackPanel Grid.Row="0" 
-                Orientation="Vertical"
-                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock HorizontalAlignment="Center"
+    <ScrollViewer>
+        <StackPanel Grid.Row="0" 
+                    Orientation="Vertical"
+                    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <TextBlock HorizontalAlignment="Center"
                    Text="Problem Information" 
                    Style="{StaticResource PageTitle}"/>
-        <TextBox PlaceholderText="Vehicle Brand"
-                 Style="{StaticResource ProblemInputPanelElement}"/>
-        <TextBox PlaceholderText="Vehicle Model"
-                 Style="{StaticResource ProblemInputPanelElement}"/>
-        <TextBox PlaceholderText="Registration Number"
-                 Style="{StaticResource ProblemInputPanelElement}"/>
-        <TextBox PlaceholderText="Problem Description"
-                 Style="{StaticResource ProblemInputPanelElement}"/>
-        <TextBox PlaceholderText="Owner Name"
-                 Style="{StaticResource ProblemInputPanelElement}"/>
-        <TextBox PlaceholderText="Phone Number"
-                 Style="{StaticResource ProblemInputPanelElement}"/>
-        <Grid Margin="0, 20, 0, 0">
-            <Button HorizontalAlignment="Center"
+            <TextBox PlaceholderText="Vehicle Brand"
+                 Style="{StaticResource ProblemInputPanelElement}"
+                 Text="{Binding VehicleProblem.Vehicle.Brand, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Vehicle Model"
+                 Style="{StaticResource ProblemInputPanelElement}"
+                 Text="{Binding VehicleProblem.Vehicle.Model, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Registration Number"
+                 Style="{StaticResource ProblemInputPanelElement}"
+                 Text="{Binding VehicleProblem.Vehicle.RegistrationNUmber, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Problem Description"
+                 Style="{StaticResource ProblemInputPanelElement}"
+                 Text="{Binding VehicleProblem.Description, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Owner Name"
+                 Style="{StaticResource ProblemInputPanelElement}"
+                 Text="{Binding VehicleProblem.VehicleOwner.Name, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Phone Number"
+                 Style="{StaticResource ProblemInputPanelElement}"
+                 Text="{Binding VehicleProblem.VehicleOwner.PhoneNumber, Mode=TwoWay}"/>
+            <Grid Margin="0, 20, 0, 0">
+                <Button HorizontalAlignment="Center"
                     Content="Add Problem" />
-        </Grid>
-    </StackPanel>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+    
 
 </Page>

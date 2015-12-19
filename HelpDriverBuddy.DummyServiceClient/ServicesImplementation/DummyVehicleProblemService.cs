@@ -12,17 +12,9 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
 {
     public class DummyVehicleProblemService : IVehicleProblemService
     {
-        public Task AddVecleProblem(IVehicleProblem problem)
+        private static readonly List<IVehicleProblem> _vehicleProblems = new List<IVehicleProblem>()
         {
-            throw new NotImplementedException();
-        }
-
-        public async Task<IEnumerable<IVehicleProblem>> GetVehicleProblems()
-        {
-            await Task.Delay(2 * 1000);
-            var result = new List<VehicleProblemModel>
-            {
-                new VehicleProblemModel
+            new VehicleProblemModel
                 {
                     Description = "Dummy Description",
                     Vehicle = new VehicleModel
@@ -202,9 +194,21 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
                         PhoneNumber = "0800123456"
                     }
                 }
-            };
+        };
 
-            return result;
+        public async Task AddVecleProblem(IVehicleProblem problem)
+        {
+            await Task.Run(() =>
+            {
+                _vehicleProblems.Add(problem);
+            });
+            
+        }
+
+        public async Task<IEnumerable<IVehicleProblem>> GetVehicleProblems()
+        {
+            await Task.Delay(2 * 1000);
+            return _vehicleProblems;
         }
     }
 }

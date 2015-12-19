@@ -1,5 +1,6 @@
 ﻿using HelpDriverBuddy.DummyServiceClient.ServicesImplementation;
 using HelpDriverBuddy.Interfaces.Services;
+using HelpDriverBuddy.UniversalWindowsClient.Infrastructure.Dialogs;
 using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Infrastructure.Unity
         public static void RegisterTypes(IUnityContainer container)
         {
             container.RegisterType<IVehicleProblemService, DummyVehicleProblemService>();
+            container.RegisterType<IDialogService, DialogService>();
         }
     }
 }

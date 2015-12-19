@@ -41,7 +41,8 @@
                               Click="AddProblemClicked"/>
                     <AppBarButton Label="Refresh"
                               Icon="Refresh"
-                              HorizontalAlignment="Center"/>
+                              HorizontalAlignment="Center"
+                              Command="{Binding LoadVehicleProblemsCommand}"/>
                 </StackPanel>
             </Grid>
             
@@ -49,11 +50,6 @@
         </AppBar>
     </Page.BottomAppBar>
 
-    <!--<Page.TopAppBar>
-        <AppBar>
-            
-        </AppBar>
-    </Page.TopAppBar>-->
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <GridView Grid.Row="0"
