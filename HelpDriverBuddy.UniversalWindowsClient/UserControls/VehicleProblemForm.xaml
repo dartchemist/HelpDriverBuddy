@@ -49,7 +49,8 @@
                  Text="{Binding VehicleProblem.VehicleOwner.PhoneNumber, Mode=TwoWay}"/>
             <Grid Margin="0, 20, 0, 0">
                 <Button HorizontalAlignment="Center"
-                    Content="Add Problem" />
+                        Content="Add Problem" 
+                        Command="{Binding PostVehicleProblem}"/>
             </Grid>
         </StackPanel>
     </ScrollViewer>

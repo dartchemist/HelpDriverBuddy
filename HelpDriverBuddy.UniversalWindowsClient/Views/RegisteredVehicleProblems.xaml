@@ -7,8 +7,10 @@
     xmlns:viewModels="using:HelpDriverBuddy.UniversalWindowsClient.ViewModels" 
     xmlns:converters="using:HelpDriverBuddy.UniversalWindowsClient.Converters"
     xmlns:behaviors="using:HelpDriverBuddy.UniversalWindowsClient.Behaviors"
+    xmlns:userControls="using:HelpDriverBuddy.UniversalWindowsClient.UserControls"
     xmlns:i="using:Microsoft.Xaml.Interactivity"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    x:Name="registeredVehicleProblemsPage">
     <i:Interaction.Behaviors>
         <behaviors:PageLoadedBehavior Command="{Binding LoadVehicleProblemsCommand}"/>
     </i:Interaction.Behaviors>
@@ -52,6 +54,8 @@
 
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <userControls:SplashScreen 
+                      />
         <GridView Grid.Row="0"
                   ItemsSource="{Binding VehicleProblems}"
                   ItemTemplate="{StaticResource ProblemListViewItemTemplate}" />

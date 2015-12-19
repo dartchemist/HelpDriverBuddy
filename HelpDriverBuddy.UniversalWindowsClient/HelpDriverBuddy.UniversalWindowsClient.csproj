@@ -112,6 +112,9 @@
     <Compile Include="Models\VehicleOwner.cs" />
     <Compile Include="Models\VehicleProblem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\SplashScreen.xaml.cs">
+      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\VehicleProblemForm.xaml.cs">
       <DependentUpon>VehicleProblemForm.xaml</DependentUpon>
     </Compile>
@@ -151,6 +154,10 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="UserControls\SplashScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\VehicleProblemForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
