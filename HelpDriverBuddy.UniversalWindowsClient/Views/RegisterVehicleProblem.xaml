@@ -7,54 +7,10 @@
     xmlns:behaviors="using:HelpDriverBuddy.UniversalWindowsClient.Behaviors"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:userControls="using:HelpDriverBuddy.UniversalWindowsClient.UserControls"
     mc:Ignorable="d"
     x:Name="page">
     
-    <Page.Resources>
-        <Style x:Key="PageTitle"
-               TargetType="TextBlock">
-            <Setter Property="FontSize"
-                    Value="30" />
-        </Style>
-        
-        <Style x:Key="ProblemInputPanelElement"
-               TargetType="FrameworkElement">
-            <Setter Property="Margin"
-                    Value="0, 20, 0, 0" />
-        </Style>
-    </Page.Resources>
-
-    <ScrollViewer>
-        <StackPanel Grid.Row="0" 
-                    Orientation="Vertical"
-                    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <TextBlock HorizontalAlignment="Center"
-                   Text="Problem Information" 
-                   Style="{StaticResource PageTitle}"/>
-            <TextBox PlaceholderText="Vehicle Brand"
-                 Style="{StaticResource ProblemInputPanelElement}"
-                 Text="{Binding VehicleProblem.Vehicle.Brand, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="Vehicle Model"
-                 Style="{StaticResource ProblemInputPanelElement}"
-                 Text="{Binding VehicleProblem.Vehicle.Model, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="Registration Number"
-                 Style="{StaticResource ProblemInputPanelElement}"
-                 Text="{Binding VehicleProblem.Vehicle.RegistrationNUmber, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="Problem Description"
-                 Style="{StaticResource ProblemInputPanelElement}"
-                 Text="{Binding VehicleProblem.Description, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="Owner Name"
-                 Style="{StaticResource ProblemInputPanelElement}"
-                 Text="{Binding VehicleProblem.VehicleOwner.Name, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="Phone Number"
-                 Style="{StaticResource ProblemInputPanelElement}"
-                 Text="{Binding VehicleProblem.VehicleOwner.PhoneNumber, Mode=TwoWay}"/>
-            <Grid Margin="0, 20, 0, 0">
-                <Button HorizontalAlignment="Center"
-                    Content="Add Problem" />
-            </Grid>
-        </StackPanel>
-    </ScrollViewer>
-    
+    <userControls:VehicleProblemForm />
 
 </Page>
