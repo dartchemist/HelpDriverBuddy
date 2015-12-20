@@ -99,7 +99,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Behaviors\PageLoadedBehavior.cs" />
-    <Compile Include="Converters\ByteArrayToImageConverter.cs" />
+    <Compile Include="Converters\ImageConverter.cs" />
     <Compile Include="Helpers\PaneChildrenlMarginSetter.cs" />
     <Compile Include="Infrastructure\ChangeNotificationBase.cs" />
     <Compile Include="Infrastructure\DelegateCommand.cs" />
@@ -108,6 +108,7 @@
     <Compile Include="Infrastructure\Dialogs\ILocationService.cs" />
     <Compile Include="Infrastructure\Dialogs\LocationService.cs" />
     <Compile Include="Infrastructure\Unity\ContainerBootstrapper.cs" />
+    <Compile Include="Models\DTO\Image.cs" />
     <Compile Include="Models\DTO\Location.cs" />
     <Compile Include="Models\DTO\Vehicle.cs" />
     <Compile Include="Models\DTO\VehicleOwner.cs" />

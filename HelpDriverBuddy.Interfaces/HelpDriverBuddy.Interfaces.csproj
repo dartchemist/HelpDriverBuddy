@@ -41,6 +41,7 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\IImage.cs" />
     <Compile Include="Models\ILocation.cs" />
     <Compile Include="Models\IVehicle.cs" />
     <Compile Include="Models\IVehicleOwner.cs" />

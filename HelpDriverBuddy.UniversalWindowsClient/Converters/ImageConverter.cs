@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelpDriverBuddy.Interfaces.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,7 +12,7 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace HelpDriverBuddy.UniversalWindowsClient.Converters
 {
-    public class ByteArrayToImageConverter : IValueConverter
+    public class ImageConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
@@ -21,7 +22,7 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Converters
                     new Uri("ms-appx:/Assets/Images/DefaultCarImage.png"));
             }
 
-            var imageBytes = value as byte[];
+            var image = value as IImage;
 
             var bitmapImage = new BitmapImage();
 
@@ -29,7 +30,7 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Converters
             {
                 using (var dataWriter = new DataWriter(inmemoryRandomAccessStream.GetOutputStreamAt(0)))
                 {
-                    dataWriter.WriteBytes(imageBytes);
+                    dataWriter.WriteBytes(image.ImageBytes);
                     Task.Run(async () =>
                     {
                         await dataWriter.StoreAsync();

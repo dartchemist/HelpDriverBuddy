@@ -11,12 +11,10 @@ namespace HelpDriverBuddy.DummyServiceClient.ModelsImplementation
     {
         public string Brand { get; set; }
 
-        public byte[] Image { get; set; }
-
-        public string ImageExt { get; set; }
-
         public string Model { get; set; }
 
         public string RegistrationNumber { get; set; }
+
+        public IImage Image { get; set; }
     }
 }
