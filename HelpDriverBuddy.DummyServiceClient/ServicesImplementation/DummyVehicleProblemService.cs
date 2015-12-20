@@ -7,6 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using HelpDriverBuddy.Interfaces.Models;
 using HelpDriverBuddy.DummyServiceClient.ModelsImplementation;
+using SQLite.Net.Async;
+using Windows.Storage;
+using SQLite.Net;
+using SQLite.Net.Platform.WinRT;
+using System.Threading;
 
 namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
 {
@@ -207,25 +212,47 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
                 }
         };
 
+        private SQLiteAsyncConnection GetDBConnectionAsync()
+        {
+            var dbFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "VehicleProblems.sqlite");
+            var connectionFactory = new Func<SQLiteConnectionWithLock>(
+                () =>
+                new SQLiteConnectionWithLock(
+                        new SQLitePlatformWinRT(),
+                        new SQLiteConnectionString(dbFilePath, storeDateTimeAsTicks: false)));
+
+            var asyncConnection = new SQLiteAsyncConnection(connectionFactory);
+            return asyncConnection;
+        }
+
+        private async void InitAsync()
+        {
+            var connection = GetDBConnectionAsync();
+            await connection.CreateTablesAsync<VehicleModel, VehicleOwnerModel, VehicleProblemModel, LocationModel>();
+        }
+
+        private async Task<int> InsertVehicleProblemAsync(VehicleProblemModel vehicleProblem)
+        {
+            var connection = GetDBConnectionAsync();
+            return await connection.InsertAsync(vehicleProblem);
+        }
+
+        private async Task<IEnumerable<IVehicleProblem>> GetVehicleProblemsInternal()
+        {
+            var connection = GetDBConnectionAsync();
+            return await connection.Table<VehicleProblemModel>().ToListAsync();
+        }
+
+
         public async Task AddVecleProblem(IVehicleProblem problem)
         {
-            await Task.Run(() =>
-            {
-                _vehicleProblems.Add(problem);
-            });
-            
+            var connection = GetDBConnectionAsync();
+            await connection.InsertAsync(problem);
         }
 
         public async Task<IEnumerable<IVehicleProblem>> GetVehicleProblems()
         {
-            var random = GetRandomNumber();
-            if (random == 5)
-            {
-                throw new Exception();
-            }
-
-            await Task.Delay(random * 1000);
-            return _vehicleProblems;
+            return await GetVehicleProblemsInternal();
         }
     }
 }

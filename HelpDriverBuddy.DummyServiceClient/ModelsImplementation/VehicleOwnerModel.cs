@@ -9,6 +9,8 @@ namespace HelpDriverBuddy.DummyServiceClient.ModelsImplementation
 {
     public class VehicleOwnerModel : IVehicleOwner
     {
+        public int Id { get; set; }
+
         public ILocation Location { get; set; }
 
         public string Name { get; set; }

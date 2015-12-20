@@ -9,6 +9,8 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Models.DTO
 {
     public class VehicleOwner : IVehicleOwner
     {
+        public int Id { get; set; }
+
         public ILocation Location { get; set; }
 
         public string Name { get; set; }

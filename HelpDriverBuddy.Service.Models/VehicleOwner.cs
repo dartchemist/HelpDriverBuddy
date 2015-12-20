@@ -9,6 +9,9 @@
         public Location location;
 
         [DataMember]
+        public int Id { get; set; }
+
+        [DataMember]
         public ILocation Location
         {
             get

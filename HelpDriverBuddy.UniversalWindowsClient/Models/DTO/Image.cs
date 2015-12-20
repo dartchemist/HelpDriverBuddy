@@ -10,6 +10,8 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Models.DTO
 
     public class Image : IImage
     {
+        public int Id { get; set; }
+
         public byte[] ImageBytes { get; set; }
 
         public string ImageExt { get; set; }

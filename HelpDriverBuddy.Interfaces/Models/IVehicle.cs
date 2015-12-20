@@ -2,6 +2,7 @@
 {
     public interface IVehicle
     {
+        int Id { get; set; }
         string Brand { get; set; }
         string Model { get; set; }
         string RegistrationNumber { get; set; }

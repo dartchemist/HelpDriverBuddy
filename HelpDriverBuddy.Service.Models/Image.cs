@@ -7,6 +7,10 @@
     public class Image : IImage
     {
         [DataMember]
+
+        public int Id { get; set; }
+
+        [DataMember]
         public byte[] ImageBytes { get; set; }
 
         [DataMember]

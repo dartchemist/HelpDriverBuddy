@@ -5,6 +5,8 @@
 
     public class VehicleProblem : IVehicleProblem
     {
+        public int Id { get; set; }
+
         public DateTime CreateOn { get; set; }
 
         public string Description { get; set; }

@@ -11,6 +11,9 @@
         public VehicleOwner vehicleOwner;
 
         [DataMember]
+        public int Id { get; set; }
+
+        [DataMember]
         public string Description { get; set; }
 
         [DataMember]

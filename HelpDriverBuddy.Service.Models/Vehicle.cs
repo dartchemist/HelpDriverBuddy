@@ -11,6 +11,9 @@
         private Image image;
 
         [DataMember]
+        public int Id { get; set; }
+
+        [DataMember]
         public string Brand { get; set; }
 
         [DataMember]

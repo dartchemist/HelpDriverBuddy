@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Windows.Graphics.Imaging;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 
 namespace HelpDriverBuddy.UniversalWindowsClient.Converters
@@ -46,7 +47,7 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)
         {
-            throw new NotImplementedException();   
+            return null; 
         }
     }
 }
