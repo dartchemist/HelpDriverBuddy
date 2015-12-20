@@ -99,6 +99,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Behaviors\PageLoadedBehavior.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\ImageConverter.cs" />
     <Compile Include="Helpers\PaneChildrenlMarginSetter.cs" />
     <Compile Include="Infrastructure\ChangeNotificationBase.cs" />
@@ -127,7 +128,6 @@
     </Compile>
     <Compile Include="ViewModels\PostNewProblemViewModel.cs" />
     <Compile Include="ViewModels\RegisteredVehicleProblemsViewModel.cs" />
-    <Compile Include="ViewModels\RegisterVehicleProblemViewModel.cs" />
     <Compile Include="Views\RegisteredVehicleProblems.xaml.cs">
       <DependentUpon>RegisteredVehicleProblems.xaml</DependentUpon>
     </Compile>

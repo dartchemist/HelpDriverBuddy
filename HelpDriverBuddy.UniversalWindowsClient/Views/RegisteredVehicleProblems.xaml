@@ -54,8 +54,8 @@
 
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <userControls:SplashScreen 
-                      />
+        <userControls:SplashScreen IsVisible="{Binding IsDataLoading}" />
+
         <GridView Grid.Row="0"
                   ItemsSource="{Binding VehicleProblems}"
                   ItemTemplate="{StaticResource ProblemListViewItemTemplate}" />

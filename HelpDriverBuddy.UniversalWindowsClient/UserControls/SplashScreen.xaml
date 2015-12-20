@@ -10,14 +10,26 @@
     d:DesignWidth="400"
     x:Name="splashScreen">
 
+    <UserControl.Resources>
+        <Style x:Key="LoadingMessageStyle"
+               TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment"
+                    Value="Center" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+            <Setter Property="Margin"
+                    Value="0, 30, 0, 0" />
+            <Setter Property="FontSize"
+                    Value="28" />
+        </Style>
+    </UserControl.Resources>
+
     <Grid Width="{Binding ElementName=splashScreen, Path=Width}"
           Height="{Binding ElementName=splashScreen, Path=Height}"
           Background="#80808080 ">
-        <ProgressRing IsActive="True"/>
-        <TextBlock Text="Text"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   Margin="0, 30, 0, 0"/>
+        <ProgressRing IsActive="{Binding ElementName=splashScreen, Path=IsVisible}"/>
+        <TextBlock Text="{Binding ElementName=splashScreen, Path=Message}"
+                   Style="{StaticResource LoadingMessageStyle}"/>
     </Grid>
 
 </UserControl>

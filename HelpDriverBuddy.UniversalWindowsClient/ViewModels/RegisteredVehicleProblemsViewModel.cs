@@ -32,6 +32,19 @@ namespace HelpDriverBuddy.UniversalWindowsClient.ViewModels
             }
         }
 
+        private bool _isDataLoading;
+        public bool IsDataLoading
+        {
+            get { return _isDataLoading; }
+            set
+            {
+                if (value == _isDataLoading)
+                    return;
+                OnPropertyChanged(nameof(IsDataLoading));
+            }
+        }
+
+
         #region Commands
 
         private ICommand _loadVehicleProblemsCommand;
@@ -49,6 +62,7 @@ namespace HelpDriverBuddy.UniversalWindowsClient.ViewModels
 
         private async void LoadVehicleData(object parameter)
         {
+            IsDataLoading = true;
             try
             {
                 var vehicleProblems = ToObservableCollection(
@@ -64,6 +78,10 @@ namespace HelpDriverBuddy.UniversalWindowsClient.ViewModels
             catch (Exception)
             {
                 await _dialogService.ShowMessage("Could not load current vehicle problems");
+            }
+            finally
+            {
+                IsDataLoading = false;
             }
            
         }
