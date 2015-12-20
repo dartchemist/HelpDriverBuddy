@@ -50,7 +50,7 @@
             <Grid Margin="0, 20, 0, 0">
                 <Button HorizontalAlignment="Center"
                         Content="Add Problem" 
-                        Command="{Binding PostVehicleProblem}"/>
+                        Command="{Binding PostVehicleProblemCommand}"/>
             </Grid>
         </StackPanel>
     </ScrollViewer>
