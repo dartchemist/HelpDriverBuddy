@@ -24,8 +24,12 @@
                        Height="100"/>
                 <StackPanel Orientation="Vertical"
                             VerticalAlignment="Center">
-                    <TextBlock Text="{Binding Vehicle.BrandAndModel}"/>
-                    <TextBlock Text="{Binding Vehicle.RegistrationNumber}"/>
+                    <TextBlock Text="{Binding Vehicle.BrandAndModel}"
+                               TextWrapping="WrapWholeWords"
+                               Width="100"/>
+                    <TextBlock Text="{Binding Vehicle.RegistrationNumber}"
+                               TextWrapping="WrapWholeWords"
+                               Width="100"/>
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
@@ -54,7 +58,8 @@
 
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <userControls:SplashScreen IsVisible="{Binding IsDataLoading}" />
+        <userControls:SplashScreen IsVisible="{Binding IsDataLoading, Mode=TwoWay}"
+                                   Message="Loading Data..."/>
 
         <GridView Grid.Row="0"
                   ItemsSource="{Binding VehicleProblems}"

@@ -36,6 +36,11 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Infrastructure
             _execute(parameter);
         }
 
+        public void RaiseCanExecuteChanged()
+        {
+            OnCanExecuteChanged();
+        }
+
         public event EventHandler CanExecuteChanged;
 
         protected virtual void OnCanExecuteChanged()

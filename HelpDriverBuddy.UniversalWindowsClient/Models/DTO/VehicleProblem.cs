@@ -12,5 +12,11 @@
         public IVehicle Vehicle { get; set; }
 
         public IVehicleOwner VehicleOwner { get; set; }
+
+        public VehicleProblem()
+        {
+            Vehicle = new Vehicle();
+            VehicleOwner = new VehicleOwner();
+        }
     }
 }

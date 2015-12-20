@@ -5,10 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace HelpDriverBuddy.UniversalWindowsClient.Models
 {
-    public abstract class ModelWrapper<TModel> : ChangeNotificationBase
+    public abstract class ModelWrapper<TModel> : NotifyDataErrorInfoBase
     {
         protected ModelWrapper(TModel businessModel)
         {
@@ -19,6 +20,8 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Models
 
             BusinessModel = businessModel;
         }
+
+        public bool IsValid { get { return !HasErrors; } }
 
         public TModel BusinessModel { get; private set; }
 
@@ -37,7 +40,31 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Models
                 return;
 
             propertyInfo.SetValue(BusinessModel, value);
+            Validate();
             OnPropertyChanged(propertyName);
+        }
+
+        private void Validate()
+        {
+            ClearErrors();
+
+            var results = new List<ValidationResult>();
+            var validationContext = new ValidationContext(this);
+            Validator.TryValidateObject(this, validationContext, results, true);
+            if (results.Any())
+            {
+                var propertyNames = results.SelectMany(r => r.MemberNames).Distinct().ToList();
+                foreach (var propertyName in propertyNames)
+                {
+                    Errors[propertyName] = results
+                        .Where(r => r.MemberNames.Contains(propertyName))
+                        .Select(r => r.ErrorMessage)
+                        .Distinct()
+                        .ToList();
+                    OnErrorsChanged(propertyName);
+                }
+            }
+            OnPropertyChanged(nameof(IsValid));
         }
     }
 }

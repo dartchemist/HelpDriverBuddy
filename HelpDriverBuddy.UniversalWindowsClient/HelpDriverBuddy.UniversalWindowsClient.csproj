@@ -108,6 +108,7 @@
     <Compile Include="Infrastructure\Dialogs\IDialogService.cs" />
     <Compile Include="Infrastructure\Dialogs\ILocationService.cs" />
     <Compile Include="Infrastructure\Dialogs\LocationService.cs" />
+    <Compile Include="Infrastructure\NotifyDataErrorInfoBase.cs" />
     <Compile Include="Infrastructure\Unity\ContainerBootstrapper.cs" />
     <Compile Include="Models\DTO\Image.cs" />
     <Compile Include="Models\DTO\Location.cs" />

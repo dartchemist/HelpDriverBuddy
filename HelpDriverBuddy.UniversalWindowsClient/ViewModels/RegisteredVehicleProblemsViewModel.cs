@@ -40,6 +40,7 @@ namespace HelpDriverBuddy.UniversalWindowsClient.ViewModels
             {
                 if (value == _isDataLoading)
                     return;
+                _isDataLoading = value;
                 OnPropertyChanged(nameof(IsDataLoading));
             }
         }

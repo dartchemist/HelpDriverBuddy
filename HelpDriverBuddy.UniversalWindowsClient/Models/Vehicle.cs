@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HelpDriverBuddy.UniversalWindowsClient.Models
 {
-    public class Vehicle : ModelWrapper<IVehicle>
+    public class Vehicle : ModelWrapper<IVehicle>, IEquatable<Vehicle>
     {
         public Vehicle(IVehicle businessModel) : base(businessModel)
         {
@@ -44,5 +44,11 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Models
             get { return $"{Brand} {Model}"; }
         }
 
+        public bool Equals(Vehicle other)
+        {
+            return (Brand == other.Brand &&
+                Model == other.Model &&
+                RegistrationNumber == other.RegistrationNumber);
+        }
     }
 }

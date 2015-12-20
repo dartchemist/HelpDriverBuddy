@@ -40,7 +40,6 @@ namespace HelpDriverBuddy.UniversalWindowsClient.UserControls
         public SplashScreen()
         {
             this.InitializeComponent();
-            IsVisible = true;
         }
     }
 }

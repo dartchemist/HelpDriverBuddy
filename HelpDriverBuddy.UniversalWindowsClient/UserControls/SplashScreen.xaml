@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:HelpDriverBuddy.UniversalWindowsClient.UserControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:converters="using:HelpDriverBuddy.UniversalWindowsClient.Converters"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     d:DesignHeight="300"
@@ -11,6 +12,7 @@
     x:Name="splashScreen">
 
     <UserControl.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="VisibilityConverter" />
         <Style x:Key="LoadingMessageStyle"
                TargetType="TextBlock">
             <Setter Property="HorizontalAlignment"
@@ -20,14 +22,16 @@
             <Setter Property="Margin"
                     Value="0, 30, 0, 0" />
             <Setter Property="FontSize"
-                    Value="28" />
+                    Value="20" />
         </Style>
     </UserControl.Resources>
 
     <Grid Width="{Binding ElementName=splashScreen, Path=Width}"
           Height="{Binding ElementName=splashScreen, Path=Height}"
-          Background="#80808080 ">
-        <ProgressRing IsActive="{Binding ElementName=splashScreen, Path=IsVisible}"/>
+          Background="#80808080 "
+          Visibility="{Binding ElementName=splashScreen,Path=IsVisible, 
+        Converter={StaticResource VisibilityConverter}}">
+        <ProgressRing IsActive="True"/>
         <TextBlock Text="{Binding ElementName=splashScreen, Path=Message}"
                    Style="{StaticResource LoadingMessageStyle}"/>
     </Grid>

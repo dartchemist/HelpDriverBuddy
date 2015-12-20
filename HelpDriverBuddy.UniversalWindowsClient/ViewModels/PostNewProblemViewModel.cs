@@ -27,13 +27,18 @@ namespace HelpDriverBuddy.UniversalWindowsClient.ViewModels
             {
                 if (postVehicleProblemCommand == null)
                 {
-                    postVehicleProblemCommand = new DelegateCommand(PostVehicleProblem);
+                    postVehicleProblemCommand = new DelegateCommand(PostVehicleProblem, CanPostVehicleProblem);
                 }
 
                 return postVehicleProblemCommand;
             }
         }
 
+        private bool CanPostVehicleProblem(object obj)
+        {
+            return VehicleProblem.IsValid;
+
+        }
 
         private async void PostVehicleProblem(object parameter)
         {
@@ -49,10 +54,14 @@ namespace HelpDriverBuddy.UniversalWindowsClient.ViewModels
             }
         }
 
-        
+        private void InvalidateCommands()
+        {
+            ((DelegateCommand)PostVehicleProblemCommand).RaiseCanExecuteChanged();
+        }
 
         public PostNewProblemViewModel(IVehicleProblemService vehicleProblemService, IDialogService dialogService, ILocationService locationService)
         {
+            VehicleProblem = new VehicleProblem(new HelpDriverBuddy.UniversalWindowsClient.Models.DTO.VehicleProblem());
             this.vehicleProblemService = vehicleProblemService;
             this.dialogService = dialogService;
             this.locationService = locationService;

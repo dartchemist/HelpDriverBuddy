@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HelpDriverBuddy.UniversalWindowsClient.Models
 {
-    public class VehicleProblem : ModelWrapper<IVehicleProblem>
+    public class VehicleProblem : ModelWrapper<IVehicleProblem>, IEquatable<VehicleProblem>
     {
         public VehicleProblem(IVehicleProblem businessModel) : base(businessModel)
         {
@@ -22,6 +22,12 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Models
         {
             get { return GetPropertyValue<string>(nameof(Description)); }
             set { SetPropertyValue(value, nameof(Description)); }
+        }
+
+        public DateTime CreateOn
+        {
+            get { return GetPropertyValue<DateTime>(nameof(CreateOn)); }
+            set { SetPropertyValue(value, nameof(CreateOn)); }
         }
 
         private void InitializeComplexProperties(IVehicleProblem model)
@@ -38,6 +44,12 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Models
 
             Vehicle = new Vehicle(model.Vehicle);
             VehicleOwner = new VehicleOwner(model.VehicleOwner);
+        }
+
+        public bool Equals(VehicleProblem other)
+        {
+            return Vehicle.Equals(other.Vehicle) && VehicleOwner.Equals(other.VehicleOwner) &&
+                Description == other.Description;
         }
     }
 }

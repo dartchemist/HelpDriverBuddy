@@ -12,6 +12,17 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
 {
     public class DummyVehicleProblemService : IVehicleProblemService
     {
+        private static readonly Random _getRandom = new Random();
+        private static readonly object _syncLock = new object();
+
+        public static int GetRandomNumber()
+        {
+            lock(_syncLock)
+            {
+                return _getRandom.Next(1, 10);
+            }
+        }
+
         private static readonly List<IVehicleProblem> _vehicleProblems = new List<IVehicleProblem>()
         {
             new VehicleProblemModel
@@ -35,7 +46,7 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
                     Vehicle = new VehicleModel
                     {
                         Brand = "Ford",
-                        Model = "Fusion",
+                        Model = "Mustang",
                         RegistrationNumber = "CB 0000 CE"
                     },
                     VehicleOwner = new VehicleOwnerModel
@@ -50,7 +61,7 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
                     Vehicle = new VehicleModel
                     {
                         Brand = "Ford",
-                        Model = "Fusion",
+                        Model = "MondeoX3456",
                         RegistrationNumber = "CB 0000 CE"
                     },
                     VehicleOwner = new VehicleOwnerModel
@@ -64,8 +75,8 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
                     Description = "Dummy Description",
                     Vehicle = new VehicleModel
                     {
-                        Brand = "Ford",
-                        Model = "Fusion",
+                        Brand = "BMW",
+                        Model = "X3",
                         RegistrationNumber = "CB 0000 CE"
                     },
                     VehicleOwner = new VehicleOwnerModel
@@ -207,7 +218,13 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
 
         public async Task<IEnumerable<IVehicleProblem>> GetVehicleProblems()
         {
-            await Task.Delay(2 * 1000);
+            var random = GetRandomNumber();
+            if (random == 5)
+            {
+                throw new Exception();
+            }
+
+            await Task.Delay(random * 1000);
             return _vehicleProblems;
         }
     }
