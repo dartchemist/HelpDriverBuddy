@@ -101,6 +101,7 @@
     <Compile Include="Behaviors\PageLoadedBehavior.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\ImageConverter.cs" />
+    <Compile Include="Converters\InverseBoolConverter.cs" />
     <Compile Include="Helpers\PaneChildrenlMarginSetter.cs" />
     <Compile Include="Infrastructure\ChangeNotificationBase.cs" />
     <Compile Include="Infrastructure\DelegateCommand.cs" />

@@ -16,6 +16,7 @@
     </i:Interaction.Behaviors>
 
     <Page.Resources>
+        <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>
         <converters:ImageConverter x:Key="ImageConverter"/>
         <DataTemplate x:Key="ProblemListViewItemTemplate">
             <StackPanel Orientation="Horizontal">
@@ -35,7 +36,7 @@
         </DataTemplate>
     </Page.Resources>
 
-    <Page.BottomAppBar>
+    <!--<Page.BottomAppBar>
         <AppBar>
             <Grid>
                 <StackPanel Orientation="Horizontal"
@@ -50,20 +51,36 @@
                               HorizontalAlignment="Center"
                               Command="{Binding LoadVehicleProblemsCommand}"/>
                 </StackPanel>
-            </Grid>
+            </Grid>-->
             
             
-        </AppBar>
-    </Page.BottomAppBar>
+        <!--</AppBar>
+    </Page.BottomAppBar>-->
 
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <userControls:SplashScreen IsVisible="{Binding IsDataLoading, Mode=TwoWay}"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <userControls:SplashScreen Grid.Row="0"
+                                   IsVisible="{Binding IsDataLoading, Mode=TwoWay}"
                                    Message="Loading Data..."/>
 
         <GridView Grid.Row="0"
                   ItemsSource="{Binding VehicleProblems}"
                   ItemTemplate="{StaticResource ProblemListViewItemTemplate}" />
 
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <Button Content="Add Problem"
+                        HorizontalAlignment="Center"/>
+            <Button Content="Refresh Information"
+                    HorizontalAlignment="Center"
+                    Command="{Binding LoadVehicleProblemsCommand}" 
+                    IsEnabled="{Binding IsDataLoading, Converter={StaticResource InverseBoolConverter}}"
+                    Margin="30, 0, 0, 0"/>
+        </StackPanel>
     </Grid>
 </Page>

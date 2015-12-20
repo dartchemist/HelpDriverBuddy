@@ -31,8 +31,8 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
                     Vehicle = new VehicleModel
                     {
                         Brand = "Ford",
-                        Model = "Fusion",
-                        RegistrationNumber = "CB 0000 CE",
+                        Model = "Fusion0",
+                        RegistrationNumber = "CB 0000 CD",
                     },
                     VehicleOwner = new VehicleOwnerModel
                     {
@@ -47,7 +47,7 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
                     {
                         Brand = "Ford",
                         Model = "Mustang",
-                        RegistrationNumber = "CB 0000 CE"
+                        RegistrationNumber = "CB 0000 CC"
                     },
                     VehicleOwner = new VehicleOwnerModel
                     {
@@ -91,7 +91,7 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
                     Vehicle = new VehicleModel
                     {
                         Brand = "Ford",
-                        Model = "Fusion",
+                        Model = "Fusion1",
                         RegistrationNumber = "CB 0000 CE"
                     },
                     VehicleOwner = new VehicleOwnerModel
@@ -106,7 +106,7 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
                     Vehicle = new VehicleModel
                     {
                         Brand = "Ford",
-                        Model = "Fusion",
+                        Model = "Fusion2",
                         RegistrationNumber = "CB 0000 CE"
                     },
                     VehicleOwner = new VehicleOwnerModel
@@ -121,7 +121,7 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
                     Vehicle = new VehicleModel
                     {
                         Brand = "Ford",
-                        Model = "Fusion",
+                        Model = "Fusion3",
                         RegistrationNumber = "CB 0000 CE"
                     },
                     VehicleOwner = new VehicleOwnerModel
@@ -136,7 +136,7 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
                     Vehicle = new VehicleModel
                     {
                         Brand = "Ford",
-                        Model = "Fusion",
+                        Model = "Fusion4",
                         RegistrationNumber = "CB 0000 CE"
                     },
                     VehicleOwner = new VehicleOwnerModel
@@ -151,7 +151,7 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
                     Vehicle = new VehicleModel
                     {
                         Brand = "Ford",
-                        Model = "Fusion",
+                        Model = "Fusion5",
                         RegistrationNumber = "CB 0000 CE"
                     },
                     VehicleOwner = new VehicleOwnerModel
@@ -166,7 +166,7 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
                     Vehicle = new VehicleModel
                     {
                         Brand = "Ford",
-                        Model = "Fusion",
+                        Model = "Fusion7",
                         RegistrationNumber = "CB 0000 CE"
                     },
                     VehicleOwner = new VehicleOwnerModel
@@ -181,7 +181,7 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
                     Vehicle = new VehicleModel
                     {
                         Brand = "Ford",
-                        Model = "Fusion",
+                        Model = "Fusion6",
                         RegistrationNumber = "CB 0000 CE"
                     },
                     VehicleOwner = new VehicleOwnerModel
@@ -196,7 +196,7 @@ namespace HelpDriverBuddy.DummyServiceClient.ServicesImplementation
                     Vehicle = new VehicleModel
                     {
                         Brand = "Ford",
-                        Model = "Fusion",
+                        Model = "Fusion12",
                         RegistrationNumber = "CB 0000 CE"
                     },
                     VehicleOwner = new VehicleOwnerModel
