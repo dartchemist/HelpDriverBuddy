@@ -16,7 +16,7 @@
     </i:Interaction.Behaviors>
 
     <Page.Resources>
-        <converters:ByteArrayToImageConverter x:Key="ImageConverter"/>
+        <converters:ImageConverter x:Key="ImageConverter"/>
         <DataTemplate x:Key="ProblemListViewItemTemplate">
             <StackPanel Orientation="Horizontal">
                 <Image Source="{Binding Vehicle.Image, Mode=TwoWay, Converter={StaticResource ImageConverter}}" 

@@ -18,7 +18,25 @@
 
             set
             {
-                this.location = value as Location;
+                if (value == null)
+                {
+                    this.location = null;
+
+                    return;
+                }
+
+                var castValue = value as Location;
+
+                if(castValue == null)
+                {
+                    castValue = new Location()
+                    {
+                        Latitude = value.Latitude,
+                        Longitude = value.Longitude
+                    };
+                }
+
+                this.location = castValue;
             }
         }
 

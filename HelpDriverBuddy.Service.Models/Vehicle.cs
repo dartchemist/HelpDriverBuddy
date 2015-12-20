@@ -1,5 +1,6 @@
 ﻿namespace HelpDriverBuddy.Service.Models
 {
+    using System;
     using System.Runtime.Serialization;
     using HelpDriverBuddy.Interfaces.Models;
 
@@ -7,6 +8,8 @@
     [DataContract]
     public class Vehicle : IVehicle
     {
+        private Image image;
+
         [DataMember]
         public string Brand { get; set; }
 
@@ -17,9 +20,35 @@
         public string RegistrationNumber { get; set; }
 
         [DataMember]
-        public byte[] Image { get; set; }
+        public IImage Image
+        {
+            get
+            {
+                return image;
+            }
 
-        [DataMember]
-        public string ImageExt { get; set; }
+            set
+            {
+                if(value == null)
+                {
+                    image = null;
+
+                    return;
+                }
+
+                var castImage = value as Image;
+
+                if(castImage == null)
+                {
+                    castImage = new Image()
+                    {
+                        ImageBytes = value.ImageBytes,
+                        ImageExt = value.ImageExt
+                    };
+                }
+
+                image = castImage;
+            }
+        }
     }
 }

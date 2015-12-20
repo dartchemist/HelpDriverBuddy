@@ -22,7 +22,27 @@
             }
             set
             {
-                this.vehicle = value as Vehicle;
+                if (value == null)
+                {
+                    this.vehicle = null;
+
+                    return;
+                }
+
+                var castVehicle = value as Vehicle;
+
+                if (castVehicle == null)
+                {
+                    castVehicle = new Vehicle()
+                    {
+                        Brand = value.Brand,
+                        Image = value.Image,
+                        Model = value.Model,
+                        RegistrationNumber = value.RegistrationNumber
+                    };
+                }
+
+                this.vehicle = castVehicle;
             }
         }
 
@@ -35,7 +55,26 @@
             }
             set
             {
-                this.vehicleOwner = value as VehicleOwner;
+                if (value == null)
+                {
+                    this.vehicleOwner = null;
+
+                    return;
+                }
+
+                var castOwner = value as VehicleOwner;
+
+                if(castOwner == null)
+                {
+                    castOwner = new VehicleOwner()
+                    {
+                        Location = value.Location,
+                        Name = value.Name,
+                        PhoneNumber = value.PhoneNumber
+                    };
+                }
+
+                this.vehicleOwner = castOwner;
             }
         }
 
