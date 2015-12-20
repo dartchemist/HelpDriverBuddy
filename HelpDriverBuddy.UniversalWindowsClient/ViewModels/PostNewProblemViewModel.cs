@@ -8,27 +8,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.Devices.Geolocation;
 
 namespace HelpDriverBuddy.UniversalWindowsClient.ViewModels
 {
     public class PostNewProblemViewModel : ChangeNotificationBase
     {
-        private readonly IVehicleProblemService _vehicleProblemService;
-        private readonly IDialogService _dialogService;
+        private readonly IVehicleProblemService vehicleProblemService;
+        private readonly IDialogService dialogService;
+        private readonly ILocationService locationService;
 
         public VehicleProblem VehicleProblem { get; private set; }
 
-        private ICommand _postVehicleProblemCommand;
+        private ICommand postVehicleProblemCommand;
         public ICommand PostVehicleProblemCommand
         {
             get
             {
-                if (_postVehicleProblemCommand == null)
+                if (postVehicleProblemCommand == null)
                 {
-                    _postVehicleProblemCommand = new DelegateCommand(PostVehicleProblem);
+                    postVehicleProblemCommand = new DelegateCommand(PostVehicleProblem);
                 }
 
-                return _postVehicleProblemCommand;
+                return postVehicleProblemCommand;
             }
         }
 
@@ -37,20 +39,23 @@ namespace HelpDriverBuddy.UniversalWindowsClient.ViewModels
         {
             try
             {
-                await _vehicleProblemService.AddVecleProblem(VehicleProblem.BusinessModel);
+                var location = await locationService.GetLocation();
+                this.VehicleProblem.BusinessModel.VehicleOwner.Location = location;
+                await vehicleProblemService.AddVecleProblem(this.VehicleProblem.BusinessModel);
             }
             catch (Exception)
             {
-                await _dialogService.ShowMessage("Could not upload problem information");
+                await dialogService.ShowMessage("Could not upload problem information");
             }
         }
 
         
 
-        public PostNewProblemViewModel(IVehicleProblemService vehicleProblemService, IDialogService dialogService)
+        public PostNewProblemViewModel(IVehicleProblemService vehicleProblemService, IDialogService dialogService, ILocationService locationService)
         {
-            _vehicleProblemService = vehicleProblemService;
-            _dialogService = dialogService;
+            this.vehicleProblemService = vehicleProblemService;
+            this.dialogService = dialogService;
+            this.locationService = locationService;
         }
     }
 }

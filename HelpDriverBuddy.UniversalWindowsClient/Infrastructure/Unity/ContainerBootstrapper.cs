@@ -16,6 +16,7 @@ namespace HelpDriverBuddy.UniversalWindowsClient.Infrastructure.Unity
         {
             container.RegisterType<IVehicleProblemService, DummyVehicleProblemService>();
             container.RegisterType<IDialogService, DialogService>();
+            container.RegisterType<ILocationService, LocationService>();
         }
     }
 }

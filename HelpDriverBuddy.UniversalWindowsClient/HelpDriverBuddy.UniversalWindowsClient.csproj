@@ -105,7 +105,13 @@
     <Compile Include="Infrastructure\DelegateCommand.cs" />
     <Compile Include="Infrastructure\Dialogs\DialogService.cs" />
     <Compile Include="Infrastructure\Dialogs\IDialogService.cs" />
+    <Compile Include="Infrastructure\Dialogs\ILocationService.cs" />
+    <Compile Include="Infrastructure\Dialogs\LocationService.cs" />
     <Compile Include="Infrastructure\Unity\ContainerBootstrapper.cs" />
+    <Compile Include="Models\DTO\Location.cs" />
+    <Compile Include="Models\DTO\Vehicle.cs" />
+    <Compile Include="Models\DTO\VehicleOwner.cs" />
+    <Compile Include="Models\DTO\VehicleProblem.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\ModelWrapper.cs" />
     <Compile Include="Models\Vehicle.cs" />
